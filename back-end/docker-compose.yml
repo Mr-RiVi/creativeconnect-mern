@@ -1,0 +1,10 @@
+version: '3'
+services:
+  backend:
+    container_name: mycontainer1
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/app
+    command: yarn start
