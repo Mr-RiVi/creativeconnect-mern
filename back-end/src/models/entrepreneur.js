@@ -6,6 +6,21 @@ const ideaSchema =new mongoose.Schema(
             type: String,
             required: true,
           },
+        ideaDescription: {
+            type: String,
+            require: true,
+            unnique: false,
+        },
+        ideaIndustry: {
+            type: String,
+            require: true,
+            unnique: false,
+        },
+        ideaBudget: {
+            type: String,
+            require: true,
+            unnique: false,
+        },
     },
     {
         versionKey: false,
