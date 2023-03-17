@@ -35,6 +35,7 @@ const user_accountSchema = mongoose.Schema(
         role: {
             type: String,
             required: true,
+            unique: false,
 
         }
     },
@@ -43,3 +44,5 @@ const user_accountSchema = mongoose.Schema(
         timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },
     }
 )
+const UserAccount = mongoose.model('userAccount', user_accountSchema)
+export default UserAccount
