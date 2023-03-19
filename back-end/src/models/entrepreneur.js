@@ -2,24 +2,59 @@ import mongoose from 'mongoose'
 
 const ideaSchema =new mongoose.Schema(
     {
-        ideaName: {
+        entName: {
             type: String,
             required: true,
           },
-        ideaDescription: {
+        entEmail: {
             type: String,
             require: true,
-            unnique: false,
+            unique: true,
         },
-        ideaIndustry: {
-            type: String,
+        entContact: {
+            type: Number,
             require: true,
-            unnique: false,
+            unique: false,
         },
-        ideaBudget: {
+        entLang: {
             type: String,
             require: true,
-            unnique: false,
+            unique: false,
+        },
+        entBusinessField: {
+            type: String,
+            require: true,
+            unique: false,
+        },
+        entComName: {
+            type: String,
+            require: true,
+            unique: false,
+        },
+        entComAddr: {
+            type: String,
+            require: true,
+            unique: false,
+        },
+        entComContact: {
+            type: String,
+            require: true,
+            unique: false,
+        },
+        entComWeb: {
+            type: String,
+            require: true,
+            unique: false,
+        },
+        entComCountry: {
+            type: String,
+            require: true,
+            unique: false,
+        },
+        entComDes: {
+            type: String,
+            require: true,
+            unique: false,
         },
     },
     {
