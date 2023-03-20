@@ -72,6 +72,24 @@ const innovationSchema = mongoose.Schema(
     },
 
     //Intellectual property information
+    patentNumber: {
+      type: String,
+    },
+    patentFilingDate: {
+      type: Date,
+    },
+    trademarkRegistrationNumber: {
+      type: String,
+    },
+    trademarkFilingDate: {
+      type: Date,
+    },
+    copyrightRegistrationNumber: {
+      type: String,
+    },
+    copyrightFilingDate: {
+      type: Date,
+    },
   },
   {
     versionKey: false,
