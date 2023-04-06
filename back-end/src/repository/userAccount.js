@@ -20,3 +20,39 @@ export const createUserAccount = async (details) => {
     return { msg: 'Details Not Add' };
   }
 };
+
+//Get one user account Details
+export const getUserAccount = async (id) => {
+  return await UserAccount.findById(id);
+};
+
+//Get All user account Details
+export const getUserAccounts = async () => {
+  try {
+    const a = await UserAccount.find().sort({ createdAt: -1 });
+    console.log(a);
+    return a;
+  } catch (error) {
+    return { msg: 'No User accounts found' };
+  }
+};
+
+//Updating user account Details
+export const updateUserAccounts = async (id, ob) => {
+  try {
+    await UserAccount.findByIdAndUpdate(id, ob);
+    return { msg: 'update successfull' };
+  } catch (error) {
+    return { msg: 'update Error' };
+  }
+};
+
+// Delete user account Details
+export const deleteUserAccounts = async (id) => {
+  try {
+    await UserAccount.findByIdAndDelete(id);
+    return { msg: 'deletion successfull' };
+  } catch (error) {
+    return { msg: 'deletion not successfull' };
+  }
+};
