@@ -4,7 +4,7 @@ import {
   getmeeting,
   getmeetings,
   updateMeeting,
-} from '../repository/meeting';
+} from '../repository/meeting.js';
 
 // Creating meeting details
 export const addMeeting = async ({

@@ -5,7 +5,7 @@ import {
   getMeetings,
   meetingRegister,
   updatemeeting,
-} from '../controllers/meeting';
+} from '../controllers/meeting.js';
 
 const meeting_router = express.Router();
 

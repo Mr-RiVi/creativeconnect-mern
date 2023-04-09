@@ -1,17 +1,17 @@
-import MeetingTable from '../models/meeting';
-
+// import MeetingTable from '../models/meeting.js';
+import MeetingTable from '../models/meeting.js'
 // adding meeting details
 export const createMeeting = async (details) => {
   console.log(details);
   try {
-    const MeetingTable = new MeetingTable({
+    const meetingTable = new MeetingTable ({
       meetingId: details.meetingId,
       password: details.password,
       discription: details.discription,
       date: details.date,
       time: details.time,
     });
-    await MeetingTable.sace();
+    await meetingTable.save();
     return { msg: 'Details Add Succesfully' };
   } catch (error) {
     console.log(error);

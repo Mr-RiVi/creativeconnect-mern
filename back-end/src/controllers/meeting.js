@@ -1,12 +1,12 @@
-import asyncHandler from '../middleware/async';
-import makeResponse from '../middleware/response';
+import asyncHandler from '../middleware/async.js';
+import makeResponse from '../middleware/response.js';
 import {
   addMeeting,
   deleteMeetingsById,
   getAllMeetings,
   getMeetingID,
   updatemeetingById,
-} from '../services/meeting';
+} from '../services/meeting.js';
 
 //adding meeting details
 export const meetingRegister = asyncHandler(async (req, res) => {

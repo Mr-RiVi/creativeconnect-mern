@@ -18,12 +18,14 @@ const meetingSchema = mongoose.Schema(
       unique: false,
     },
     date: {
-      type: Date,
+      type: String,
       required: true,
+      nique: false,
     },
     time: {
       type: Number,
       required: false,
+      nique: false,
     },
   },
   {
