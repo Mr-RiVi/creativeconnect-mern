@@ -31,7 +31,7 @@ export const getmeetings = async () => {
     console.log(a);
     return a;
   } catch (error) {
-    return { msg: 'No Meetings found' };
+    return { msg: 'No Meetings found' + error.message };
   }
 };
 
