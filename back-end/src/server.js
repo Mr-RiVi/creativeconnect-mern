@@ -7,7 +7,7 @@ import databaseConnection from './config/databaseConnection.js';
 
 dotenv.config();
 const app = express();
-
+app.use(express.json({ limit: '1mb' }));
 databaseConnection();
 
 app.use(express.json({ limit: '1mb' }))
