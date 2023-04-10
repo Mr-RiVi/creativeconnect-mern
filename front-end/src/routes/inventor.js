@@ -1,16 +1,21 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import MarketAnalysis from "../pages/MarketAnalysis/marketAnalysis";
+import BasicInnovationInformation from "../pages/BasicInnovationInformation/basicInnovationInformation";
 
-const inventorRoutes = () => {
+const InventorRoutes = () => {
   return (
-    <Router>
-      <Switch>
-        {/* <Route path="/" exact component={HomePage} /> */}
-        <Route path="/market-potential" exact component={MarketAnalysis} />
-      </Switch>
-    </Router>
+    <Routes>
+      <Route
+        path="/insert-innovation"
+        element={<BasicInnovationInformation />}
+      />
+      <Route
+        path="/insert-innovation/market-potential"
+        element={<MarketAnalysis />}
+      />
+    </Routes>
   );
 };
 
-export default inventorRoutes;
+export default InventorRoutes;

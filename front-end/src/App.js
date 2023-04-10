@@ -1,12 +1,14 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
-//page eka import karanna
-import BasicInnovationInformation from "./pages/BasicInnovationInformation/basicInnovationInformation";
+import IndexRoutes from "./routes";
 
 function App() {
   return (
     <div className="App">
-      <BasicInnovationInformation />
+      <BrowserRouter>
+        <IndexRoutes />
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import axios from "axios";
-// import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
@@ -50,6 +49,7 @@ const stages = [
 ];
 
 function BasicInnovationInformation() {
+  const navigate = useNavigate();
   const titleRef = useRef();
   const errRef = useRef();
 
@@ -66,8 +66,6 @@ function BasicInnovationInformation() {
 
   const [errorMsg, setErrorMsg] = useState("");
   const [success, setSuccess] = useState(false);
-
-  // const history = useHistory();
 
   useEffect(() => {
     titleRef.current.focus();
@@ -97,7 +95,7 @@ function BasicInnovationInformation() {
     sessionStorage.setItem("stage", stage);
     sessionStorage.setItem("description", description);
 
-    // history.push("/market-potential");
+    navigate("./market-potential");
   };
   return (
     <section className="main-section">
