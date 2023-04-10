@@ -12,6 +12,10 @@ databaseConnection();
 
 app.use(express.json({ limit: '1mb' }))
 app.use(cors());
+
+// app.get('/', (req, res) =>
+//   res.status(200).json({ message: 'Server Up and Running' })
+// )
 app.use('/api', router);
 
 const port = process.env.PORT || 3000;
