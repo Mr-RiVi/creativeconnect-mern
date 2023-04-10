@@ -3,6 +3,7 @@ import {
   insertInnovationToDB,
   retrieveInnovationFromDB,
   retrieveAllInnovationsFromDB,
+  searchInnovations,
   updateInnovationsFromDB,
   deleteInnovationsFromDB,
 } from '../services/innovation.js';
@@ -32,6 +33,16 @@ export const getAllInnovation = async (req, res) => {
     res.status(404).send({ error: 'No document found for the given ID' });
   }
 };
+
+export const searchInnovationHandler = async (req, res) => {
+  try {
+    const searchRes = await searchInnovations(req.query.q);
+    res.send(searchRes);
+  } catch (error) {
+    res.status(404).send({ error: 'No document found' });
+  }
+};
+
 export const modifyInnovation = async (req, res) => {
   try {
     const modifiedInnovation = await updateInnovationsFromDB(

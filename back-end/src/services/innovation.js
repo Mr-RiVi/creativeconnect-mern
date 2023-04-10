@@ -1,3 +1,5 @@
+import Fuse from 'fuse.js';
+
 import {
   insertInnovationDetails,
   readInnovationDetails,
@@ -45,6 +47,21 @@ export const retrieveInnovationFromDB = async (id) => {
 export const retrieveAllInnovationsFromDB = async () => {
   return await readAllInnovationDetails();
 };
+
+export const searchInnovations = async (query) => {
+  const options = {
+    keys: ['title', 'industry', 'stage', 'description'],
+  };
+  try {
+    const innovations = await readAllInnovationDetails();
+    const fuse = new Fuse(innovations, options);
+    const searchResults = fuse.search(query);
+    return searchResults;
+  } catch (err) {
+    return err;
+  }
+};
+
 export const updateInnovationsFromDB = async (id, updatedInfo) => {
   return await updateInnovationDetails(id, updatedInfo);
 };
