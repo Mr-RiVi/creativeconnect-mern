@@ -83,7 +83,7 @@ const Signup = () => {
   };
 
   return (
-    <div id="card" >
+    <div id="card">
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit} onReset={handleReset}>
         <div>
@@ -113,7 +113,7 @@ const Signup = () => {
             onChange={(e) => setContactNumber(e.target.value)}
           />
         </div>
-        <div>
+        {/* <div>
           <label htmlFor="country">Country</label>
           <select
             id="country"
@@ -136,7 +136,17 @@ const Signup = () => {
             <option value="South Korea">South Korea</option>
             <option value="Australia">Australia</option>
           </select>
+        </div> */}
+        <div>
+          <label htmlFor="country">Country</label>
+          <input
+            type="text"
+            id="country"
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+          />
         </div>
+
         <div>
           <label htmlFor="password">Password</label>
           <input
@@ -153,7 +163,7 @@ const Signup = () => {
             value={role}
             onChange={(e) => setRole(e.target.value)}
           >
-            <option value="">--Please choose an option--</option>
+            <option value="">Select a Role</option>
             <option value="Inventor">Inventor</option>
             <option value="Entrapranure">Entrapranure</option>
             <option value="Mentor">Mentor</option>

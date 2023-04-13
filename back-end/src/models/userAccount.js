@@ -20,7 +20,6 @@ const user_accountSchema = mongoose.Schema(
     country: {
       type: String,
       required: true,
-      unique: true,
     },
     password: {
       type: String,
