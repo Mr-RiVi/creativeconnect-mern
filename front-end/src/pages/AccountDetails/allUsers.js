@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "../../assets/styles/allUsers.css";
 
 const UserList = () => {
   const [users, setUser] = useState([]);
@@ -18,26 +19,25 @@ const UserList = () => {
     fetchUser();
   }, []);
 
-// useEffect(() => {
-//   const fetchUser = async () => {
-//     try {
-//       const response = await fetch(
-//         "http://localhost:3000/api/userAccount/viewAllUserAccounts"
-//       );
-//       const json = await response.json();
-//       if (response.ok) {
-//         setUser(json);
-//       } else {
-//         throw new Error("API error");
-//       }
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         "http://localhost:3000/api/userAccount/viewAllUserAccounts"
+  //       );
+  //       const json = await response.json();
+  //       if (response.ok) {
+  //         setUser(json);
+  //       } else {
+  //         throw new Error("API error");
+  //       }
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
 
-//   fetchUser();
-//   }, []);
-
+  //   fetchUser();
+  //   }, []);
 
   return (
     <div className="container bg-green-200 rounded-xl shadow border p-8 m-10">
@@ -103,7 +103,7 @@ const UserList = () => {
                             {user.fullName}
                           </td>
                           <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            {user.emailAddress}
+                            {user.emailAdress}
                           </td>
                           <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                             {user.role}
@@ -117,15 +117,15 @@ const UserList = () => {
                           <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                             <div className="flex space-x-2 justify-center">
                               <div>
-                                <button
+                                {/* <button
                                   type="button"
                                   className="inline-block px-6 py-2 border-2 border-blue-400 text-blue-400 font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                                 >
                                   View{" "}
-                                </button>
+                                </button> */}
 
                                 {/* Edit Button */}
-                                <Link to={`Update/${user.UserAccount_id}`}>
+                                <Link to={`Update/${user._id}`}>
                                   <button
                                     type="button"
                                     className="inline-block px-6 py-2 border-2 border-green-500 text-green-500 font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
@@ -139,7 +139,7 @@ const UserList = () => {
                                 </Link>
 
                                 {/* Delete Button */}
-                                <Link to={`/delete/${user.UserAccount_id}`}>
+                                <Link to={`/delete/${user._id}`}>
                                   <button
                                     type="button"
                                     className="inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
