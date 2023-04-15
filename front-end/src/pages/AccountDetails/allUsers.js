@@ -19,26 +19,6 @@ const UserList = () => {
     fetchUser();
   }, []);
 
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         "http://localhost:3000/api/userAccount/viewAllUserAccounts"
-  //       );
-  //       const json = await response.json();
-  //       if (response.ok) {
-  //         setUser(json);
-  //       } else {
-  //         throw new Error("API error");
-  //       }
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-
-  //   fetchUser();
-  //   }, []);
-
   return (
     <div className="container bg-green-200 rounded-xl shadow border p-8 m-10">
       <h1 className="text-3xl">Currunt Users of the application</h1>
@@ -93,7 +73,7 @@ const UserList = () => {
                     <tbody>
                       {users.map((user, i) => (
                         <tr
-                          key={user.UserAccount_id}
+                          key={user._id}
                           className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100"
                         >
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
