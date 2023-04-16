@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../assets/styles/allUsers.css";
+import Navigation from "../../components/common/Sanjula/navbar";
 
 const UserList = () => {
   const [users, setUser] = useState([]);
@@ -21,6 +22,7 @@ const UserList = () => {
 
   return (
     <div className="card">
+      <Navigation />
       <div className="container bg-green-200 rounded-xl shadow border p-8 m-10">
         <h1 className="text-3xl">Currunt Users of the application</h1>
         <div className="mt-6 space-y-6">
@@ -31,7 +33,9 @@ const UserList = () => {
                   <div className="overflow-hidden">
                     <table className="min-w-full">
                       <thead className="bg-white border-b">
+                      
                         <tr>
+                          
                           <th
                             scope="col"
                             className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
@@ -120,7 +124,7 @@ const UserList = () => {
                                   </Link>
 
                                   {/* Delete Button */}
-                                  <Link to={`/delete/${user._id}`}>
+                                  <Link to={`delete/${user._id}`}>
                                     <button
                                       type="button"
                                       className="inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"

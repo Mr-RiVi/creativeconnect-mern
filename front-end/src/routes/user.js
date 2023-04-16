@@ -4,6 +4,7 @@ import Signup from "../pages/AccountDetails/signpage.js";
 import UserList from "../pages/AccountDetails/allUsers.js";
 import ProfilePage from "../pages/AccountDetails/viewUser.js";
 import UserUpdateForm from "../pages/AccountDetails/updateuser.js";
+import UserDelete from "../pages/AccountDetails/deleteUser.js";
 // import MarketAnalysis from "../pages/MarketAnalysis/marketAnalysis";
 // import BasicInnovationInformation from "../pages/BasicInnovationInformation/basicInnovationInformation";
 
@@ -14,6 +15,7 @@ const UserRoutes = () => {
       <Route path="/AllUsers" element={<UserList />} />
       <Route path="/Profile" element={<ProfilePage />} />
       <Route path="/AllUsers/Update/:id" element={<UserUpdateForm />} />
+      <Route path="/AllUsers/delete/:id" element={<UserDelete />} />
     </Routes>
   );
 };

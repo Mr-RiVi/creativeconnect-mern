@@ -1,3 +1,5 @@
+
+
 /* Set font family and font size */
 body {
     font-family: sans-serif;
@@ -87,11 +89,13 @@ body {
     text-align: center;
   }
   
-  #card {	
-    background-color: #abd2d3;	
+  .card {	
+    padding-left: 200px;
+   z-index: 1;
+    /* background-color: #abd2d3;	
     border-radius: 5px;	
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);	
     margin: 0 auto;	
     max-width: 500px;	
-    padding: 20px;	
+    padding: 20px;	 */
   }
