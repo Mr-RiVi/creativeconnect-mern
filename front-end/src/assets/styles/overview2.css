@@ -1,0 +1,79 @@
+.main-section {
+  font-family: Arial, sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px;
+}
+
+.first-section {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.first-section li {
+  padding: 7px;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.title-area {
+  flex: 1;
+  margin-left: 50px;
+}
+
+.innovationTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.headings {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.market-potential-details ul,
+.competitivePricingAnalysis-details ul,
+.fundingNeeds-details ul,
+.IntellectualProperty-details ul,
+.contactInformation-details ul,
+.teamMembers-details ul {
+  background-color: #f5f5f5;
+  list-style-type: none;
+  margin: 0;
+  padding: 5px;
+}
+
+.market-potential-details ul li,
+.competitivePricingAnalysis-details ul li,
+.fundingNeeds-details ul li,
+.IntellectualProperty-details ul li,
+.contactInformation-details ul li,
+.teamMembers-details ul li {
+  padding: 10px;
+}
+
+.label-type2 {
+  font-weight: bold;
+  display: inline-block;
+  width: 200px;
+}
+
+.value-type2 {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+button {
+  background-color: #ffdb58;
+}
