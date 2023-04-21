@@ -6,6 +6,7 @@ import {
   searchInnovations,
   updateInnovationsFromDB,
   deleteInnovationsFromDB,
+  calculateInnovationValuation,
 } from '../services/innovation.js';
 
 export const insertInnovation = async (req, res) => {
@@ -61,5 +62,14 @@ export const removeInnovation = asyncHandler(async (req, res) => {
     res.json(removedInnovation);
   } catch (error) {
     res.status(404).send({ error: 'No document found for the given ID' });
+  }
+});
+
+export const InnovationValuationHandler = asyncHandler(async (req, res) => {
+  try {
+    const estimatedValues = await calculateInnovationValuation(req.params.id);
+    res.send(estimatedValues);
+  } catch (error) {
+    res.status(404).send({ error: "Can't perform analysis" });
   }
 });
