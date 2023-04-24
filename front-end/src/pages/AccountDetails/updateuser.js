@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
-import Navigation from "../../components/common/Sanjula/navbar";
-
+// import Navigation from "../../components/common/Sanjula/navbar";
+import Sidebar from "../../components/common/Sanjula/sidenavbar";
 import "../../assets/styles/userupdate.css";
 
 export default function UserUpdateForm() {
@@ -64,112 +64,120 @@ export default function UserUpdateForm() {
   }, [id]);
 
   return (
-    <div className="car">
-      <Navigation />
-      <div className="container bg-green-200 rounded-xl shadow border p-8 m-10">
-        <h1 className="text-3xl">Update User Details</h1>
-        <div className="mt-6 space-y-6">
-          <div className="-space-y-px rounded-md shadow-sm">
-            <div>
-              <label className="sr-only">User Name</label>
-              <input
-                id="fullName"
-                name="fullName"
-                type="text"
-                required
-                className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                placeholder="User Name"
-                onChange={(e) => {
-                  setFullName(e.target.value);
-                }}
-                value={fullName}
-              />
-            </div>
-            <div>
-              <label className="sr-only">Email Address</label>
-              <input
-                id="emailAdress"
-                name="emailAdress"
-                type="text"
-                required
-                className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                placeholder="Email Address"
-                onChange={(e) => {
-                  setEmailAddress(e.target.value);
-                }}
-                value={emailAddress}
-              />
-            </div>
-            <div>
-              <label className="sr-only">contact Number </label>
-              <input
-                id="contactNumber"
-                name="contactNumber"
-                type="text"
-                required
-                className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                placeholder="contact Number"
-                onChange={(e) => {
-                  setContactNumber(e.target.value);
-                }}
-                value={contactNumber}
-              />
-            </div>
-            <div>
-              <label className="sr-only">Country</label>
-              <input
-                id="country"
-                name="country"
-                type="text"
-                required
-                className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                placeholder="country"
-                onChange={(e) => {
-                  setCountry(e.target.value);
-                }}
-                value={country}
-              />
-            </div>
-
-            <div>
-              <label className="sr-only">Password</label>
-              <input
-                id="password"
-                name="password"
-                type="Text"
-                required
-                className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                placeholder="password"
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-                value={password}
-              />
-            </div>
-            <div>
-              <label className="sr-only">Role</label>
-              <input
-                id="role"
-                name="role"
-                type="text"
-                required
-                className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                placeholder="role"
-                onChange={(e) => {
-                  setRole(e.target.value);
-                }}
-                value={role}
-              />
-            </div>
-
+    <div>
+      <Sidebar />
+      <div className="card">
+        <div className="container bg-green-200 rounded-xl shadow border p-8 m-10">
+          <h1 className="text-3xl">Update User Details</h1>
+          <div className="mt-6 space-y-6">
+            <div className="-space-y-px rounded-md shadow-sm">
             <br></br>
-            <div className="but">
-              <button
-                onClick={Update}
-                className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              >
-                Update
-              </button>
+              <div>
+                <label className="sr-only">User Name</label>
+                <input
+                  id="fullName"
+                  name="fullName"
+                  type="text"
+                  required
+                  className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  placeholder="User Name"
+                  onChange={(e) => {
+                    setFullName(e.target.value);
+                  }}
+                  value={fullName}
+                />
+                <br></br>
+              </div>
+              <div>
+                <label className="sr-only">Email Address</label>
+                <input
+                  id="emailAdress"
+                  name="emailAdress"
+                  type="text"
+                  required
+                  className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  placeholder="Email Address"
+                  onChange={(e) => {
+                    setEmailAddress(e.target.value);
+                  }}
+                  value={emailAddress}
+                />
+                <br></br>
+              </div>
+              <div>
+                <label className="sr-only">contact Number </label>
+                <input
+                  id="contactNumber"
+                  name="contactNumber"
+                  type="text"
+                  required
+                  className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  placeholder="contact Number"
+                  onChange={(e) => {
+                    setContactNumber(e.target.value);
+                  }}
+                  value={contactNumber}
+                />
+                <br></br>
+              </div>
+              <div>
+                <label className="sr-only">Country</label>
+                <input
+                  id="country"
+                  name="country"
+                  type="text"
+                  required
+                  className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  placeholder="country"
+                  onChange={(e) => {
+                    setCountry(e.target.value);
+                  }}
+                  value={country}
+                />
+                <br></br>
+              </div>
+
+              <div>
+                <label className="sr-only">Password</label>
+                <input
+                  id="password"
+                  name="password"
+                  type="Text"
+                  required
+                  className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  placeholder="password"
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                  value={password}
+                />
+                <br></br>
+              </div>
+              <div>
+                <label className="sr-only">Role</label>
+                <input
+                  id="role"
+                  name="role"
+                  type="text"
+                  required
+                  className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  placeholder="role"
+                  onChange={(e) => {
+                    setRole(e.target.value);
+                  }}
+                  value={role}
+                />
+              </div>
+
+              <br></br>
+              <div className="but">
+                <button
+                  onClick={Update}
+                  className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  Update
+                </button>
+              </div>
             </div>
           </div>
         </div>

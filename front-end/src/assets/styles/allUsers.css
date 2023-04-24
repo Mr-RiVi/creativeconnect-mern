@@ -95,6 +95,9 @@ body {
     padding-left: 200px;
      z-index: 1;
      background-color: rgb(299, 231, 235);
+     display: flex;
+     justify-content: center;
+     align-items: center;
    
     /* background-color: #abd2d3;	
     border-radius: 5px;	
