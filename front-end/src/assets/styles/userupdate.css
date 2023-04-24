@@ -1,6 +1,6 @@
 .container {
-    background-color: #d1fae5; /* set the background color */
-    border: 1px solid #34d399; /* add a border */
+    background-color: #E5E7EB; /* set the background color */
+    border: 1px solid #c5c8cd; /* add a border */
     border-radius: 1rem; /* round the edges */
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05); /* add a shadow */
     padding: 2rem; /* add some padding */
@@ -37,6 +37,7 @@
   .car{
     padding-left: 200px;
     z-index: 1;
+    background-color: #E5E7EB;
   }
 
   .but {

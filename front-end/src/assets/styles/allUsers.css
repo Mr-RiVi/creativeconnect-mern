@@ -94,7 +94,7 @@ body {
   .card {	
     padding-left: 200px;
      z-index: 1;
-     background-color: rgb(299, 231, 235);
+     background-color: #E5E7EB;
      display: flex;
      justify-content: center;
      align-items: center;
