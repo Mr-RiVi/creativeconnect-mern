@@ -1,5 +1,6 @@
 #card {	
-    background-color: #abd2d3;	
+    /* background-color: #abd2d3;	 */
+    background-color: rgb(299, 231, 235);
     border-radius: 5px;	
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);	
     margin: 0 auto;	
@@ -68,7 +69,8 @@
   }
   
   body {
-    background-color: #79b7b9;
+    /* background-color: #EDF2F7; */
+    background-color: #E5E7EB;
     padding: 20px;
   }
   

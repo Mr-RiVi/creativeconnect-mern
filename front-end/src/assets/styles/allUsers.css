@@ -8,6 +8,7 @@ body {
   
   /* Style the container */
   .container {
+    background-color:rgb(299, 231, 235) ;
     max-width: 960px;
     margin: 0 auto;
   }
@@ -43,7 +44,8 @@ body {
   
   /* Style the hover effect */
   tbody tr:hover {
-    background-color: #f1f1f1;
+    /* background-color: #f1f1f1; */
+    background-color: rgb(299, 231, 235);
   }
   
   /* Style the buttons */
@@ -91,7 +93,9 @@ body {
   
   .card {	
     padding-left: 200px;
-   z-index: 1;
+     z-index: 1;
+     background-color: rgb(299, 231, 235);
+   
     /* background-color: #abd2d3;	
     border-radius: 5px;	
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);	
