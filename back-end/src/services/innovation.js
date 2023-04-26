@@ -56,8 +56,9 @@ export const searchInnovations = async (query) => {
   const options = {
     keys: ['title', 'industry', 'stage', 'description'],
   };
+  const projection = { title: 1, industry: 1, stage: 1, description: 1 };
   try {
-    const innovations = await readAllInnovationDetails();
+    const innovations = await readAllInnovationDetails(projection);
     const fuse = new Fuse(innovations, options);
     const searchResults = fuse.search(query);
     return searchResults;
@@ -84,6 +85,16 @@ export const calculateInnovationValuation = async (id) => {
   // ..Estimated cost (X5)
   // ..Target selling price (X6)
   // .Funding needed (X7)
+
+  const independVariables = {
+    marketSize: '',
+    demand: '',
+    levelOfCompetitionInTargetMarket: '',
+    timeToPenetrateMarketAndAchieveProfitability: '',
+    estimatedCost: '',
+    targetSellingPrice: '',
+    fundingNeeded: '',
+  };
 
   const projection = {
     'marketPotential.marketSize': 1,
@@ -162,6 +173,8 @@ export const calculateInnovationValuation = async (id) => {
 
   const x = filteredData.map((row) => row.slice(0, -1)); // independent variables
   const y = filteredData.map((row) => row.slice(-1)); // dependent variable
+  console.log(x);
+  console.log(y);
 
   const model = new mlr(x, y);
 
@@ -169,12 +182,27 @@ export const calculateInnovationValuation = async (id) => {
 
   const predictedPrice = model.predict(v1);
   console.log(predictedPrice);
+  console.log(v1);
+  await updateInnovationDetails(id, { estimatedPrice: Number(predictedPrice) });
 
   // calcualting r2 value
   const n = y.length;
-  const yMean = y.reduce((a, b) => a + b, 0) / n;
-  const SSR = predictedPrice.reduce((a, b, i) => a + Math.pow(b - y[i], 2), 0);
-  const SST = y.reduce((a, b) => a + Math.pow(b - yMean, 2), 0);
+  const dependVariableArray = y.map((currentValue) => currentValue[0]);
+  const yMean =
+    dependVariableArray.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue;
+    }, 0) / n;
+
+  console.log(yMean);
+
+  const SSR = predictedPrice.reduce(
+    (a, b, i) => a + Math.pow(b - dependVariableArray[i], 2),
+    0
+  ); // sum of squared residuals (SSR)
+  const SST = dependVariableArray.reduce(
+    (a, b) => a + Math.pow(b - yMean, 2),
+    0
+  ); //total sum of squares (SST)
   const R2 = 1 - SSR / SST;
   console.log('r2value is: ' + R2);
 
@@ -183,16 +211,21 @@ export const calculateInnovationValuation = async (id) => {
 
   // most significant factor
   const coefficients = model.weights.slice(-7);
-  const newArr = coefficients.map((innerArr) => innerArr[0]);
-  const mostSignificantFactor = Math.max(...newArr);
+  const coefficientsArray = coefficients.map((innerArr) => innerArr[0]);
+  for (const [index, key] of Object.keys(independVariables).entries()) {
+    independVariables[key] = coefficientsArray[index];
+  }
 
-  console.log(mostSignificantFactor);
+  const coObjectArray = Object.entries(independVariables);
+  coObjectArray.sort((a, b) => b[1] - a[1]);
+  const sortedIndependVariables = Object.fromEntries(coObjectArray);
 
   const result = {
-    estimatedInnovationPrice: predictedPrice,
-    rSquared: R2,
+    estimatedInnovationPrice: Number(predictedPrice).toFixed(2),
+    rSquared: Math.floor(R2 * 100) / 100,
     intercept,
+    sortedIndependVariables,
   };
 
-  return predictedPrice;
+  return result;
 };

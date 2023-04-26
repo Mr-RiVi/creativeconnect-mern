@@ -37,7 +37,7 @@ export const getAllInnovation = async (req, res) => {
 
 export const searchInnovationHandler = async (req, res) => {
   try {
-    const searchRes = await searchInnovations(req.query.q);
+    const searchRes = await searchInnovations(req.query.keyword);
     res.send(searchRes);
   } catch (error) {
     res.status(404).send({ error: 'No document found' });
@@ -66,8 +66,9 @@ export const removeInnovation = asyncHandler(async (req, res) => {
 });
 
 export const InnovationValuationHandler = asyncHandler(async (req, res) => {
+  const estimatedValues = await calculateInnovationValuation(req.params.id);
   try {
-    const estimatedValues = await calculateInnovationValuation(req.params.id);
+    // const estimatedValues = await calculateInnovationValuation(req.params.id);
     res.send(estimatedValues);
   } catch (error) {
     res.status(404).send({ error: "Can't perform analysis" });

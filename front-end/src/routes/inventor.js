@@ -6,6 +6,8 @@ import FinancingAndPatentInfo from "../pages/FinancingAndPatentInfo/financingAnd
 import TeamAndContactInfo from "../pages/TeamAndContactInformation/teamAndContactInfo";
 import InnovationOverview from "../pages/InnovationOverview/innovationOverview";
 import ValuationReportPage from "../pages/ValuationReport/valuationReportPage";
+import InnovationVault from "../pages/InnovationVault/innovationVault";
+import InnovationUpdate from "../pages/InnovationUpdtae/innovationUpdate";
 
 const InventorRoutes = () => {
   return (
@@ -26,8 +28,10 @@ const InventorRoutes = () => {
         path="/insert-innovation/team-contact-info"
         element={<TeamAndContactInfo />}
       />
-      <Route path="/innovation-overview" element={<InnovationOverview />} />
+      <Route path="/innovation-overview/" element={<InnovationOverview />} />
       <Route path="/report" element={<ValuationReportPage />} />
+      <Route path="/innovation-vault" element={<InnovationVault />} />
+      <Route path="/innovation-update" element={<InnovationUpdate />} />
     </Routes>
   );
 };

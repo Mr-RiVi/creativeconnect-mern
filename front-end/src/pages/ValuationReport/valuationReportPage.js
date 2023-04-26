@@ -1,10 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
+
+import "../../assets/styles/priceReportPage.css";
+
+const REPORT_INFO_RETRIEVE_URL =
+  "http://localhost:3000/api/innovation/get-estiamted-value/";
+
+const independVariablesMapping = {
+  marketSize: "Market size",
+  demand: "Market demand",
+  levelOfCompetitionInTargetMarket: "Level of competition in the target market",
+  timeToPenetrateMarketAndAchieveProfitability:
+    "Time to penetrate the market and achieve profitability",
+  estimatedCost: "Estimated cost",
+  targetSellingPrice: "Target selling price",
+  fundingNeeded: "Funding needed",
+};
 
 const ValuationReportPage = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const id = searchParams.get("id");
+
+  const [reportDetails, setReportDetails] = useState({});
+
+  const retrieveReportInfo = async () => {
+    try {
+      const response = await axios.get(REPORT_INFO_RETRIEVE_URL + id);
+
+      if (response.status >= 200 && response.status < 300) {
+        setReportDetails(response?.data);
+        // successful response
+        console.log("Response is successful");
+      } else {
+        // unsuccessful response
+        console.log("Error: " + response.status + " " + response.statusText);
+      }
+    } catch (error) {
+      console.log("Error: " + error);
+    }
+  };
+
+  useEffect(() => {
+    retrieveReportInfo();
+  }, []);
   return (
     <section className="main-section">
       <h1>Estimate Innovation Price Report</h1>
@@ -45,24 +85,24 @@ const ValuationReportPage = () => {
         <h3>Results</h3>
         <h4>
           Estimated Price: {"Rs."}
-          {"3600.00"}
+          {reportDetails.estimatedInnovationPrice}
         </h4>
         <p>
-          The estimated price of the innovation is [insert estimated price].
-          This price was derived using a multivariate regression analysis
-          algorithm, which is a statistical method that helps to identify the
-          relationship between multiple independent variables and a dependent
-          variable, such as the price of an innovation. The following factors
-          were taken into account:
+          The estimated price of the innovation is {"Rs."}
+          {reportDetails.estimatedInnovationPrice}. This price was derived using
+          a multivariate regression analysis algorithm, which is a statistical
+          method that helps to identify the relationship between multiple
+          independent variables and a dependent variable, such as the price of
+          an innovation. The following factors were taken into account:
         </p>
         <ul>
-          <li>Market size[]</li>
-          <li>Market demand[]</li>
-          <li>Level of competition in the target market[]</li>
-          <li>Time to penetrate the market and achieve profitability[]</li>
-          <li>Estimated cost[]</li>
-          <li>Target selling price[]</li>
-          <li>Funding needed[]</li>
+          <li>Market size</li>
+          <li>Market demand</li>
+          <li>Level of competition in the target market</li>
+          <li>Time to penetrate the market and achieve profitability</li>
+          <li>Estimated cost</li>
+          <li>Target selling price</li>
+          <li>Funding needed</li>
         </ul>
         <p>
           Each of these factors was given a weight based on their perceived
@@ -70,10 +110,17 @@ const ValuationReportPage = () => {
           analysis and consideration of various market factors.
         </p>
         <p>
-          Based on the analysis, it was determined that the most significant
-          factors in determining the final price were [insert factors]. The
-          estimated price was then calculated using these factors and their
-          respective weights.
+          After analyzing the data, we found that the most important factors in
+          determining the final price are
+          <ul>
+            {reportDetails?.sortedIndependVariables &&
+              Object.keys(reportDetails.sortedIndependVariables).map((x) => (
+                <li>{independVariablesMapping[x]}</li>
+              ))}
+          </ul>
+          with the top factor being the most significant. We calculated the
+          estimated price by weighting each factor according to its importance
+          in the overall price determination.
         </p>
         <p>
           It's important to note that while this estimated price provides a
@@ -87,9 +134,10 @@ const ValuationReportPage = () => {
         <h3>Analysis</h3>
         <p>
           The results of our analysis show that the model is able to predict
-          innovation price with a high degree of accuracy, with an [R-squared
-          value of 0.85]. This indicates that the model explains a significant
-          portion of the variation in innovation price.
+          innovation price with a high degree of accuracy, with an R-squared
+          value of <strong>{reportDetails.rSquared}</strong>. This indicates
+          that the model explains a significant portion of the variation in
+          innovation price.
         </p>
         <p>
           One limitation of our model is that it is based on a relatively small

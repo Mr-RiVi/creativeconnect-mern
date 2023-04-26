@@ -1,0 +1,22 @@
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ccc;
+  width: 500px;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  background-color: #ffd700;
+  color: #fff;
+  cursor: pointer;
+  width: 100px;
+}

@@ -2,15 +2,24 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import { industries, stages } from "../../utils/innovationRelatedData";
+
 import DOMPurify from "dompurify";
 
 import "../../assets/styles/overview2.css";
 const INNOVATION_RETRIEVE_URL =
   "http://localhost:3000/api/innovation/getInnovation/";
+const INNOVATION_MODIFY_URL =
+  "http://localhost:3000/api/innovation/modifyInnovation/";
 
 const InnovationOverview = () => {
   const navigate = useNavigate();
   const [innovation, setInnovation] = useState({});
+
+  const [title, setTitle] = useState("");
+  const [industry, setIndustry] = useState("Select an Industry");
+  const [stage, setStage] = useState("Select a Stage");
+  const [description, setDescription] = useState("");
 
   // Sanitize the description
   const cleanDescription = DOMPurify.sanitize(innovation.description);
@@ -35,13 +44,21 @@ const InnovationOverview = () => {
       console.log("Error: " + error);
     }
   };
+  const modifyInnovation = async () => {
+    try {
+      const response = await axios.put(INNOVATION_MODIFY_URL + id);
 
-  const naviageReportPage = () => {
-    navigate(`../report?id=${innovation._id}`);
-  };
-
-  const naviageUpdatePage = () => {
-    navigate(`../innovation-update?id=${innovation._id}`);
+      if (response.status >= 200 && response.status < 300) {
+        setInnovation(response.data);
+        // successful response
+        console.log("Response is successful");
+      } else {
+        // unsuccessful response
+        console.log("Error: " + response.status + " " + response.statusText);
+      }
+    } catch (error) {
+      console.log("Error: " + error);
+    }
   };
 
   useEffect(() => {
@@ -64,7 +81,20 @@ const InnovationOverview = () => {
             <ul>
               <li>
                 <span className="label">Industry:</span>{" "}
-                <span className="value">{innovation.industry}</span>
+                <select
+                  id="industry"
+                  onChange={(e) => {
+                    setIndustry(e.target.value);
+                  }}
+                  value={innovation.industry}
+                >
+                  <option disabled>Select an Industry</option>
+                  {industries.map((industry) => (
+                    <option key={industry} value={industry}>
+                      {industry}
+                    </option>
+                  ))}
+                </select>
               </li>
               <li>
                 <span className="label">Stage of the innovation:</span>{" "}
@@ -367,9 +397,7 @@ const InnovationOverview = () => {
           )}
         </section>
       </section>
-      <button onClick={naviageReportPage}>Calculate Valuation</button>
-      <button onClick={naviageUpdatePage}>Update innovation</button>
-      <button>Delete innovation</button>
+      <button onClick={modifyInnovation}>Amend Innovation</button>
     </section>
   );
 };
