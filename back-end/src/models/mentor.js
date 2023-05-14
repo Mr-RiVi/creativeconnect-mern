@@ -53,7 +53,9 @@ const mentorSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-
+    mentImg: {
+      type: String,
+    },
 
   },
   {
