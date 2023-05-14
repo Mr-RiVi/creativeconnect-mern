@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../../assets/styles/allUsers.css";
 // import Navigation from "../../components/common/Sanjula/navbar";
 import Sidebar from "../../components/common/Sanjula/sidenavbar";
+import Header from "../../components/layout/header";
 
 const UserList = () => {
   const [users, setUser] = useState([]);
@@ -23,6 +24,7 @@ const UserList = () => {
 
   return (
     <div>
+      {/* <Header/> */}
       <Sidebar/>
       
       <div className="card">
