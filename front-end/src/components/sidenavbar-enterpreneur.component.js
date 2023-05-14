@@ -5,9 +5,8 @@ import { AiFillEnvironment, AiFillHome } from 'react-icons/ai'
 import { RiDashboardFill, RiTeamFill } from 'react-icons/ri'
 import { FaMoneyCheckAlt, FaWarehouse } from 'react-icons/fa'
 import { TbReport } from 'react-icons/tb'
-
 import { Link } from 'react-router-dom'
-  
+ 
 const SideNavbar = () => {
   const [open, setOpen] = useState(false)
   const [submenuOpen, setSubmenuOpen] = useState(false)
@@ -28,11 +27,11 @@ const SideNavbar = () => {
       submenu: true,
       spacing: true,
       submenuItems: [
+
         { title: 'Add New Product Idea', src: 'ideaadd' },
         { title: 'View All Product Ideas', src: 'ideadetail' },
       ],
     },
-    
 
     {
       title: 'C',
