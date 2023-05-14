@@ -20,7 +20,6 @@ export default function EntrepreneurPostIdea(){
       ideaBudget:ideaBudget
     })  
         
-    
   }
     const [entName,setentName]=useState("");    
     const [entEmail, setentEmail] = useState("");
@@ -35,17 +34,14 @@ export default function EntrepreneurPostIdea(){
     const [ideaBudget, setideaBudget] = useState("");
 
     return ( 
-    //   <div className="Header">
-    //     <Header/>
-          
-      
-      <div className = "container bg-green-200 rounded-xl shadow border p-8 m-8 ">
-        <h1 className = "text-5xl">Idea Form</h1>
+      <div className = "container bg-green-200 rounded-xl shadow border p-8 m-10 ">
+        <h1 className = "text-3xl">Idea Form</h1>
         <div className = "mt-6 space-y-6">
           <div className = "-space-y-px rounded-md shadow-sm">
           <div>
             <label  className="sr-only">Entrepreneur Name</label>
-            <input id="businessName" name="businessName" type="text" required className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Business Name" onChange={(e)=>{setentName(e.target.value)}}/>
+            <input id="businessName" name="businessName" type="text" required className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" 
+            placeholder="Business Name" onChange={(e)=>{setentName(e.target.value)}}/>
           </div>
          <div>
             <label  className="sr-only">Entrepreneur Email</label>

@@ -18,6 +18,8 @@ export const createMentorAccount = async (details) => {
       expertiseArea: details.expertiseArea,
       fbLink: details.fbLink,
       linkedinLink: details.linkedinLink,
+      mentImg: details.mentImg,
+
     })
 
     await mentor.save()
@@ -27,11 +29,6 @@ export const createMentorAccount = async (details) => {
     return { msg: 'Details Not Add' }
   }
 }
-
-//Get one mentor Details
-// export const getMentorAccount = async (id) => {
-//   return await Mentor.findById(mongoose.Types.ObjectId(id))
-// }
 
 export const getMentorAccount = async (id) => {
   return await Mentor.findById(id)

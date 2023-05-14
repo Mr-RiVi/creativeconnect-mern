@@ -1,9 +1,9 @@
 import { createMentorAccount, updateMentorAccount, deleteMentorAccount, getMentorAccount, getMentors } from '../repository/mentor.js'
 
 //Add mentor deails
-export const addMentor = async ({ mentName, role, mentId, phone, email, description, workHistory, education, language, expertiseArea, fbLink, linkedinLink }) => {
+export const addMentor = async ({ mentName, role, mentId, phone, email, description, workHistory, education, language, expertiseArea, fbLink, linkedinLink,mentImg }) => {
 
-  const details = { mentName, role, mentId, phone, email, description, workHistory, education, language, expertiseArea, fbLink, linkedinLink }
+  const details = { mentName, role, mentId, phone, email, description, workHistory, education, language, expertiseArea, fbLink, linkedinLink,mentImg }
 
   const b = await createMentorAccount(details)
   return b.msg

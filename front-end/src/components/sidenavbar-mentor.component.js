@@ -5,8 +5,9 @@ import { AiFillEnvironment, AiFillHome } from 'react-icons/ai'
 import { RiDashboardFill, RiTeamFill } from 'react-icons/ri'
 import { FaMoneyCheckAlt, FaWarehouse } from 'react-icons/fa'
 import { TbReport } from 'react-icons/tb'
+
 import { Link } from 'react-router-dom'
- 
+  
 const SideNavbar = () => {
   const [open, setOpen] = useState(false)
   const [submenuOpen, setSubmenuOpen] = useState(false)
@@ -15,22 +16,26 @@ const SideNavbar = () => {
   const Menus = [
     { title: 'HOME', icon: <AiFillHome />, src: '' },
 
-    { 
-      title: 'Profile',
-      icon: <BsFileBarGraphFill />,
-      src: 'ideadetail', 
-    },
-
     {
-      title: 'ENTREPRENEUR',
+      title: 'MENTOR',
       icon: <RiTeamFill />,
       submenu: true,
       spacing: true,
       submenuItems: [
-
-        { title: 'Add New Product Idea', src: 'ideaadd' },
-        { title: 'View All Product Ideas', src: 'ideadetail' },
+        { title: 'Add New Mentor', src: 'addMentorDetails' },
+        { title: 'View All Mentors', src: 'viewAllEmployees' },
       ],
+    },
+    {
+      title: 'A',
+      icon: <BsFileBarGraphFill />,
+      submenu: true,
+      submenuItems: [{ title: 'A1', src: 'addEmployee' }],
+    },
+    { 
+      title: 'B',
+      icon: <FaMoneyCheckAlt />,
+      src: 'viewAllSalary', 
     },
 
     {
@@ -69,7 +74,7 @@ const SideNavbar = () => {
           onClick={() => setOpen(!open)}
         />
         <div className="inline-flex">
-          <AiFillEnvironment                     //Entrepreneur sign
+          <AiFillEnvironment                     //mentor sign
             className={`bg-amber-300 text-4xl 
                     rounded cursor-pointer block float-left mr-2 duration-500 
                     ${open && 'rotate-[360deg]'}`}
@@ -79,7 +84,7 @@ const SideNavbar = () => {
                     font-medium text-2xl duration-300 
                     ${!open && 'scale-0'}`}
           >
-            Entrepreneur
+            Mentor
           </h1>
         </div>
 
