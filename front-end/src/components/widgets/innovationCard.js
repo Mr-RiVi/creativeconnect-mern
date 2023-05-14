@@ -1,5 +1,5 @@
 import React from "react";
-import "./InnovationCard.css";
+import "./innovationCard.css";
 
 function InnovationCard(props) {
   return (
