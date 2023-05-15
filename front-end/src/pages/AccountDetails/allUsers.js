@@ -27,96 +27,81 @@ const UserList = () => {
       {/* <Header/> */}
       <Sidebar/>
       
-      <div className="card">
-        <div className="container bg-green-200 rounded-xl shadow border p-8 m-10">
-          <h1 className="text-3xl">Currunt Users of the application</h1>
-          <div className="mt-6 space-y-6">
-            <div className="-space-y-px rounded-md shadow-sm">
-              <div className="flex flex-col">
-                <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                  <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                    <div className="overflow-hidden">
-                      <table className="min-w-full">
-                        <thead className="bg-white border-b">
+      <div className="csaard">
+        <div className="cont123ainer ">
+          <h1 className="h1">Currunt Users of the application</h1>
+          <div className="0002">
+            <div className="0003">
+              <div className="0004">
+                <div className="0005">
+                  <div className="0006">
+                    <div className="0007">
+                      <table className="table">
+                        <thead className="thead">
                           <tr>
                             <th
                               scope="col"
-                              className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                              className="th"
                             >
                               No
                             </th>
                             <th
                               scope="col"
-                              className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                              className="th"
                             >
                               User Name
                             </th>
                             <th
                               scope="col"
-                              className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                              className="th"
                             >
                               Email
                             </th>
                             <th
                               scope="col"
-                              className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                              className="th"
                             >
                               Role
                             </th>
-                            {/* <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                          Role
-                        </th>
-                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                          Warehouse ID
-                        </th> */}
+                           
                             <th
                               scope="col"
-                              className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                              className="th"
                             >
                               Actions
                             </th>
                           </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody className="tbody">
                           {users.map((user, i) => (
-                            <tr
+                            <tr 
                               key={user._id}
-                              className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100"
+                              className="tr"
                             >
-                              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                              <td className="td">
                                 {i + 1}
                               </td>
-                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                              <td className="td">
                                 {user.fullName}
                               </td>
-                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                              <td className="td">
                                 {user.emailAdress}
                               </td>
-                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                              <td className="td">
                                 {user.role}
                               </td>
-                              {/* <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            {user.role}
-                          </td>
-                          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            {user.wareId}
-                          </td> */}
-                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                <div className="flex space-x-2 justify-center">
+                              
+                              <td className="123">
+                                <div className="456">
                                   <div>
-                                    {/* <button
-                                  type="button"
-                                  className="inline-block px-6 py-2 border-2 border-blue-400 text-blue-400 font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-                                >
-                                  View{" "}
-                                </button> */}
+                                    
 
                                     {/* Edit Button */}
                                     <Link to={`Update/${user._id}`}>
                                       <button
                                         type="button"
-                                        className="inline-block px-6 py-2 border-2 border-green-500 text-green-500 font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                                        className="button"
                                         value={user.UserAccount_id}
                                         onClick={(e) => {
                                           console.log(e.target.value);
@@ -130,7 +115,7 @@ const UserList = () => {
                                     <Link to={`delete/${user._id}`}>
                                       <button
                                         type="button"
-                                        className="inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                                        className="button"
                                         value={user.UserAccount_id}
                                         onClick={(e) => {
                                           console.log(e.target.value);

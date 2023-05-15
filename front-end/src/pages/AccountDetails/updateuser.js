@@ -67,19 +67,19 @@ export default function UserUpdateForm() {
     <div>
       <Sidebar />
       <div className="card">
-        <div className="container bg-green-200 rounded-xl shadow border p-8 m-10">
-          <h1 className="text-3xl">Update User Details</h1>
-          <div className="mt-6 space-y-6">
-            <div className="-space-y-px rounded-md shadow-sm">
+        <div className="123">
+          <h1 className="h1">Update User Details</h1>
+          <div className="4567">
+            <div className="465">
             <br></br>
               <div>
-                <label className="sr-only">User Name</label>
+                <label className="label">User Name</label>
                 <input
                   id="fullName"
                   name="fullName"
                   type="text"
                   required
-                  className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  className="input"
                   placeholder="User Name"
                   onChange={(e) => {
                     setFullName(e.target.value);
@@ -89,13 +89,13 @@ export default function UserUpdateForm() {
                 <br></br>
               </div>
               <div>
-                <label className="sr-only">Email Address</label>
+                <label className="label">Email Address</label>
                 <input
                   id="emailAdress"
                   name="emailAdress"
                   type="text"
                   required
-                  className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  className="input"
                   placeholder="Email Address"
                   onChange={(e) => {
                     setEmailAddress(e.target.value);
@@ -105,13 +105,13 @@ export default function UserUpdateForm() {
                 <br></br>
               </div>
               <div>
-                <label className="sr-only">contact Number </label>
+                <label className="label">contact Number </label>
                 <input
                   id="contactNumber"
                   name="contactNumber"
                   type="text"
                   required
-                  className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  className="input"
                   placeholder="contact Number"
                   onChange={(e) => {
                     setContactNumber(e.target.value);
@@ -121,13 +121,13 @@ export default function UserUpdateForm() {
                 <br></br>
               </div>
               <div>
-                <label className="sr-only">Country</label>
+                <label className="label">Country</label>
                 <input
                   id="country"
                   name="country"
                   type="text"
                   required
-                  className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  className="input"
                   placeholder="country"
                   onChange={(e) => {
                     setCountry(e.target.value);
@@ -138,13 +138,13 @@ export default function UserUpdateForm() {
               </div>
 
               <div>
-                <label className="sr-only">Password</label>
+                <label className="label">Password</label>
                 <input
                   id="password"
                   name="password"
                   type="Text"
                   required
-                  className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  className="input"
                   placeholder="password"
                   onChange={(e) => {
                     setPassword(e.target.value);
@@ -154,13 +154,13 @@ export default function UserUpdateForm() {
                 <br></br>
               </div>
               <div>
-                <label className="sr-only">Role</label>
+                <label className="label">Role</label>
                 <input
                   id="role"
                   name="role"
                   type="text"
                   required
-                  className="mt-3 relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  className="input"
                   placeholder="role"
                   onChange={(e) => {
                     setRole(e.target.value);
@@ -173,7 +173,7 @@ export default function UserUpdateForm() {
               <div className="but">
                 <button
                   onClick={Update}
-                  className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  className="753"
                 >
                   Update
                 </button>

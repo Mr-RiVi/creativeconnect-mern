@@ -83,11 +83,12 @@ const Signup = () => {
   };
 
   return (
+    <div className="cardpad"> 
     <div id="card">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit} onReset={handleReset}>
+      <h2 className="h2">Sign Up</h2>
+      <form className="form" onSubmit={handleSubmit} onReset={handleReset}>
         <div>
-          <label htmlFor="fullName">Full Name</label>
+          <label className="label" htmlFor="fullName">Full Name</label>
           <input
             type="text"
             id="fullName"
@@ -96,7 +97,7 @@ const Signup = () => {
           />
         </div>
         <div>
-          <label htmlFor="emailAdress">Email Address</label>
+          <label className="label"  htmlFor="emailAdress">Email Address</label>
           <input
             type="email"
             id="emailAdress"
@@ -105,7 +106,7 @@ const Signup = () => {
           />
         </div>
         <div>
-          <label htmlFor="contactNumber">Contact Number</label>
+          <label className="label"  htmlFor="contactNumber">Contact Number</label>
           <input
             type="tel"
             id="contactNumber"
@@ -113,32 +114,9 @@ const Signup = () => {
             onChange={(e) => setContactNumber(e.target.value)}
           />
         </div>
-        {/* <div>
-          <label htmlFor="country">Country</label>
-          <select
-            id="country"
-            value={country}
-            onChange={(e) => setCountry(e.target.value)}
-          >
-            <option value="">Select Country</option>
-            <option value="USA">USA</option>
-            <option value="Canada">Canada</option>
-            <option value="Mexico">Mexico</option>
-            <option value="Brazil">Brazil</option>
-            <option value="Argentina">Argentina</option>
-            <option value="United Kingdom">United Kingdom</option>
-            <option value="France">France</option>
-            <option value="Germany">Germany</option>
-            <option value="Spain">Spain</option>
-            <option value="Italy">Italy</option>
-            <option value="China">China</option>
-            <option value="Japan">Japan</option>
-            <option value="South Korea">South Korea</option>
-            <option value="Australia">Australia</option>
-          </select>
-        </div> */}
+        
         <div>
-          <label htmlFor="country">Country</label>
+          <label className="label"  htmlFor="country">Country</label>
           <input
             type="text"
             id="country"
@@ -148,7 +126,7 @@ const Signup = () => {
         </div>
 
         <div>
-          <label htmlFor="password">Password</label>
+          <label className="label"  htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
@@ -157,7 +135,7 @@ const Signup = () => {
           />
         </div>
         <div>
-          <label htmlFor="role">Role</label>
+          <label className="label"  htmlFor="role">Role</label>
           <select
             id="role"
             value={role}
@@ -175,6 +153,7 @@ const Signup = () => {
           <button type="reset">Reset</button>
         </div>
       </form>
+    </div>
     </div>
   );
 };

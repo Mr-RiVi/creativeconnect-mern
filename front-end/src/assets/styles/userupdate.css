@@ -1,4 +1,4 @@
-.container {
+.cont123ainer {
     background-color: #E5E7EB; /* set the background color */
     border: 1px solid #c5c8cd; /* add a border */
     border-radius: 1rem; /* round the edges */
@@ -9,12 +9,12 @@
     padding-left: 40px;
   }
   
-  h1 {
+  .h1 {
     font-size: 1.875rem; /* set the font size */
     margin-bottom: 1.5rem; /* add some margin */
   }
   
-  input[type="text"] {
+  .input[type="text"] {
     /* style the input elements */
     appearance: none;
     border: 1px solid #e5e7eb;
@@ -28,8 +28,8 @@
     width: 100%;
   }
   
-  input[type="text"]:focus {
-    /* style the input elements when they're in focus */
+  .input[type="text"]:focus {
+    /* style the input elements when they're in focus d*/
     border-color: #22d3ee;
     box-shadow: 0 0 0 0.125em rgba(66, 153, 225, 0.25);
     outline: none;
@@ -41,14 +41,23 @@
   }
 
   .but {
-    /* display: block;
+    display: block;
     margin: 0 auto;
     background-color: #007bff;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    cursor: pointer; */
-    padding-left: 400px;
+    cursor: pointer;
+    padding-left: 200px;
+  }
+
+  .card{
+    background-color: #E5E7EB;
+    border-radius: 5px;	
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);	
+    margin: 0 auto;	
+    max-width: 500px;	
+    padding: 20px;	
   }
   

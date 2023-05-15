@@ -12,7 +12,7 @@ import UserDelete from "../pages/AccountDetails/deleteUser.js";
 const UserRoutes = () => {
   return (
     <div >
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/insert-user" element={<Signup />} />
         <Route path="/AllUsers" element={<UserList />} />
