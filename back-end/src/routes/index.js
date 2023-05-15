@@ -5,6 +5,8 @@ import meeting_router from './meeting.js';
 import mentor_router from './mentor.js';
 import entIdearouter from './innovationIdea.js';
 import mail_router from './mailRoutes.js';
+import entIdearouter from './innoProduct.js';
+
 
 const router = express.Router();
 

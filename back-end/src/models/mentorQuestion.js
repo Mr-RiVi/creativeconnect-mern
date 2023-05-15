@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const mentorSchema = mongoose.Schema(
+const questionchema = mongoose.Schema(
   {
     problemId: {
         type: String,
@@ -16,10 +16,6 @@ const mentorSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    role: {
-      type: String,
-      required: true,
-    },
     email: {
       type: String,
       require: true,
@@ -29,12 +25,7 @@ const mentorSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    photo: {
-      type: String,
-      required: true,
-    },
-
-
+    
   },
   {
     versionKey: false,
@@ -42,5 +33,5 @@ const mentorSchema = mongoose.Schema(
   }
 )
 
-const Mentor = mongoose.model('mentor', mentorSchema)
-export default Mentor
+const Question = mongoose.model('question', questionchema)
+export default Question

@@ -18,8 +18,6 @@ export const mentorRegister = asyncHandler(async (req, res) => {
 export const getMentor = asyncHandler(async (req, res) => {
   
   const a = await getMentorById(req.params.mentor_id)
-  // res.json(a)
-  // console.log ("==========")
   return makeResponse({
     res,
     status: 202,
