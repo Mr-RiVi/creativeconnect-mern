@@ -16,6 +16,10 @@ import EntrepreneurIdeaAdd from '../pages/Entrepreneur/entrepreneur-idea-add'
 import EntrepreneurIdeaDelete from '../pages/Entrepreneur/entrepreneur-idea-delete'
 import Seek from '../pages/Entrepreneur/seek'
 
+import NewIdeaUpdate from '../pages/Entrepreneur/entrepreneur-idea-newupdate'
+import NewProfileUpdate from '../pages/Entrepreneur/entrepreneur-profile-newupdate'
+import NewIdeaAdd from '../pages/Entrepreneur/entrepreneur-idea-newadd'
+
 
 const EntrepreneurRouterHome = () => {
   return (
@@ -38,6 +42,10 @@ const EntrepreneurRouterHome = () => {
 
               <Route path="/ideadelete/:id" element={<EntrepreneurIdeaDelete />}></Route>
               <Route path="/seek/:id" element={<Seek />}></Route>
+
+              <Route path="/newideaupdate" element={<NewIdeaUpdate />}></Route> 
+              <Route path="/newprofileupdate" element={<NewProfileUpdate />}></Route> 
+              <Route path="/newideaadd" element={<NewIdeaAdd />}></Route>
 
             </Routes>        
         </div>
