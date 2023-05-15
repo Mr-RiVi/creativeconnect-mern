@@ -54,10 +54,15 @@
 
   .card{
     background-color: #E5E7EB;
+    border-color: #a2a8ad;
     border-radius: 5px;	
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);	
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);	
     margin: 0 auto;	
     max-width: 500px;	
     padding: 20px;	
   }
   
+  .boder{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }

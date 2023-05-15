@@ -66,6 +66,7 @@ export default function UserUpdateForm() {
   return (
     <div>
       <Sidebar />
+      <div className="boder">
       <div className="card">
         <div className="123">
           <h1 className="h1">Update User Details</h1>
@@ -182,6 +183,7 @@ export default function UserUpdateForm() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
