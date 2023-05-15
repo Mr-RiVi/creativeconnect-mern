@@ -9,6 +9,8 @@ import ProfileDetail from '../pages/Mentor/mentor-profile-view'
 import ProfileDetailUpdate from '../pages/Mentor/mentor-profile-update'
 import ProfileDetailCreate from '../pages/Mentor/mentor-profile-create'
 import ProfileDetailDelete from '../pages/Mentor/mentor-profile-delete'
+import MentorProfileQuestion from '../pages/Mentor/mentor-profile-question';
+import MentorQuestion from '../pages/Mentor/mentor-question'
 
 const MentorRouterHome = () => {
   return (
@@ -24,6 +26,8 @@ const MentorRouterHome = () => {
             <Route path="/profiledetailupdate/:id" element={<ProfileDetailUpdate />}></Route>
             <Route path="/profiledetailcreate/:id" element={<ProfileDetailCreate />}></Route>
             <Route path="/profiledetaildelete/:id" element={<ProfileDetailDelete />}></Route>
+            <Route path="/profilequestion/:id" element={<MentorProfileQuestion />}></Route>
+            <Route path="/question/:id" element={<MentorQuestion />}></Route>
 
           </Routes>
         </div>

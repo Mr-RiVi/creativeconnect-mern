@@ -32,11 +32,17 @@ const ProfileDetail = () => {
 
   return (
     <div className="w-[1382px] justify-center h-auto bg-sky-200 "key={mentor._id}>
-
+      
       <div class="p-16 -mt-10 ">
         <div class="p-8 bg-white shadow mt-24">
-          <div class="grid grid-cols-1 md:grid-cols-3">
+          
+          <div className='absolute bg-slate-600 p-3 ml-16 rounded-2xl'>
+            <Link to={`../profilequestion/${mentor._id}`}>
+              <button>Messages</button>
+            </Link>
+          </div>
 
+          <div class="grid grid-cols-1 md:grid-cols-3">
             {/* profile pic */}
             <div class="relative">
               <div class="w-48 h-48 bg-indigo-100 mx-auto rounded-full shadow-2xl absolute -mt-24 flex items-center justify-center text-indigo-500 left-[500px] ">

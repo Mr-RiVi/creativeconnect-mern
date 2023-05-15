@@ -9,5 +9,4 @@ router.get('/viewMentor/:mentor_id',getMentor)
 router.put('/updateMentor/:mentor_id',updateMentor)
 router.delete('/deleteMentor/:mentor_id', deleteMentor)
 
-
 export default router
