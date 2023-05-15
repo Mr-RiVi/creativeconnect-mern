@@ -8,7 +8,7 @@ import Tooltip from "@mui/material/Tooltip";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
-import "../../assets/styles/basicInnovationInformation.css";
+// import "../../assets/styles/basicInnovationInformation.css";
 
 const TITLE_REGEX = /^[\w\s\.,!?"'&()@#%^*+=-]{1,255}$/;
 
