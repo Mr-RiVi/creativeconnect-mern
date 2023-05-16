@@ -13,11 +13,12 @@ const NewIdeaUpdate = () => {
       
         <div className=" ml-44 p-10 -mt-24">
           <div class="p-8 bg-gray-400 shadow mt-28 opacity-90 rounded-3xl ">
+          <h5 className="text-3xl font-serif mb-3 ml-56">Update Innovation Idea</h5>
             <div class="grid grid-cols-1 md:grid-cols-3">
 
               {/* profile pic */}
               <div class="relative">
-                <div class="w-96 h-60 bg-gray-500 mx-auto rounded-xl shadow-2xl absolute mt-11 -ml-[470px] flex items-center justify-center text-slate-700 left-[500px] ">
+                <div class="w-96 h-60 bg-gray-500 mx-auto rounded-xl shadow-2xl absolute mt-9 -ml-[470px] flex items-center justify-center text-slate-700 left-[500px] ">
                   {/* <img
                     src={reviewImg || r2}
                     alt=""
@@ -27,7 +28,7 @@ const NewIdeaUpdate = () => {
                 </div>
                 <div className="mr-6">
                   <input
-                    className="mt-[400px] ml-20 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-white focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="mt-[300px] ml-20 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-white focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     id="default_size"
                     type="file"
                     name="image"
@@ -40,35 +41,36 @@ const NewIdeaUpdate = () => {
 
             <div class="justify-center">
               {/* <div key={ProductIdea._id}> */}
-              <div class="flex flex-col p-[20px] w-96 -mt-[450px] mr-10 justify-center m-auto font-serif">
+              <div class="flex flex-col p-[20px] w-96 -mt-[350px] mr-10 justify-center m-auto font-serif">
                 {/* Mentor private details */}
                 <form class="flex flex-col mt-[20px] gap-6 ">
                   
                   {/* Idea Name */}
                   <TextField //single line
                     id="outlined-read-only-input"
-                    label="Title"
+                    label="Idea Name"
                     // value={reviewTitle}
                     // onChange={(e) => setReviewTitle(e.target.value)}
                   />
 
-                  {/* Idea Description */}
+                  {/* Idea Industry */}
                   <TextField //only 3 lines showing after that extended inside
                     id="outlined-multiline-static"
-                    label="Location"
+                    label="Idea Industry"
                     // defaultValue={reviewLocation}
                     // onChange={(e) => setReviewLocation(e.target.value)}
                   />
 
-                  {/* Idea Industry*/}
+                  {/* Idea Budget*/}
                   <TextField
                     id="outlined-multiline-static"
-                    label="Description"
+                    label="Idea Budget"
+                    type="number"
                     // value={reviewDate}
                     // onChange={(e) => setReviewDate(e.target.value)}
                   />
 
-                  {/* Idea Budget */}
+                  {/* Idea Description */}
                   <TextField
                     id="outlined-read-only-input"
                     label="Description"

@@ -12,6 +12,11 @@ import ProfileDetailDelete from '../pages/Mentor/mentor-profile-delete'
 import MentorProfileQuestion from '../pages/Mentor/mentor-profile-question';
 import MentorQuestion from '../pages/Mentor/mentor-question'
 
+import NewProfileDetail from '../pages/Mentor/mentor-profile-newview'
+import NewProfileDetailUpdate from '../pages/Mentor/mentor-profile-newupdate'
+import NewMentorQuestion from '../pages/Mentor/mentor-profile-newquestion'
+import NewMentorQuestionView from '../pages/Mentor/mentor-profile-newquestionview'
+
 const MentorRouterHome = () => {
   return (
     <div className="bg-blue-200 ">
@@ -28,6 +33,11 @@ const MentorRouterHome = () => {
             <Route path="/profiledetaildelete/:id" element={<ProfileDetailDelete />}></Route>
             <Route path="/profilequestion/:id" element={<MentorProfileQuestion />}></Route>
             <Route path="/question/:id" element={<MentorQuestion />}></Route>
+
+            <Route path="/newprofiledetail" element={<NewProfileDetail />}></Route>
+            <Route path="/newprofiledetailupdate" element={<NewProfileDetailUpdate />}></Route>
+            <Route path="/newprofilequestion" element={<NewMentorQuestion />}></Route>
+            <Route path="/newprofilequestionview" element={<NewMentorQuestionView />}></Route>
 
           </Routes>
         </div>
