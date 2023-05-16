@@ -15,6 +15,7 @@ import EntrepreneurIdeaAdd from '../pages/Entrepreneur/entrepreneur-idea-add'
 
 import EntrepreneurIdeaDelete from '../pages/Entrepreneur/entrepreneur-idea-delete'
 import Seek from '../pages/Entrepreneur/seek'
+import ProfileReport from '../pages/Entrepreneur/entrepreneur-idea-report'
 
 const EntrepreneurRouterHome = () => {
   return (
@@ -37,6 +38,7 @@ const EntrepreneurRouterHome = () => {
 
               <Route path="/ideadelete/:id" element={<EntrepreneurIdeaDelete />}></Route>
               <Route path="/seek/:id" element={<Seek />}></Route>
+              <Route path="/profilereport" element={<ProfileReport />}></Route>
 
             </Routes>        
         </div>
