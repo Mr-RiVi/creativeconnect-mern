@@ -53,7 +53,7 @@ const SideNavbar = () => {
     { 
       title: 'Report', 
       icon: <TbReport />,
-      src: 'report',
+      src: 'profilereport',
     },
   ]
 

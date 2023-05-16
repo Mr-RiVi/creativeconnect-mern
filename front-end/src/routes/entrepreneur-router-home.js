@@ -19,6 +19,7 @@ import Seek from '../pages/Entrepreneur/seek'
 import NewIdeaUpdate from '../pages/Entrepreneur/entrepreneur-idea-newupdate'
 import NewProfileUpdate from '../pages/Entrepreneur/entrepreneur-profile-newupdate'
 import NewIdeaAdd from '../pages/Entrepreneur/entrepreneur-idea-newadd'
+import ProfileReport from '../pages/Entrepreneur/entrepreneur-idea-report'
 
 
 const EntrepreneurRouterHome = () => {
@@ -46,6 +47,7 @@ const EntrepreneurRouterHome = () => {
               <Route path="/newideaupdate" element={<NewIdeaUpdate />}></Route> 
               <Route path="/newprofileupdate" element={<NewProfileUpdate />}></Route> 
               <Route path="/newideaadd" element={<NewIdeaAdd />}></Route>
+              <Route path="/profilereport" element={<ProfileReport />}></Route>
 
             </Routes>        
         </div>
