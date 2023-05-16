@@ -61,7 +61,7 @@ const ProfileDetailUpdate = () => {
       });
       if (response.ok) {
         alert("Profile updated successfully");
-        // window.location.replace(`../ideadetail/${id}`)
+        window.location.replace(`/mentorHome/profiledetail/${id}`)
       } else {
         throw new Error('Failed to update Profile');
       }
@@ -77,7 +77,7 @@ const ProfileDetailUpdate = () => {
       });
       if (response.ok) {
         alert("Profile deleted successfully");
-        // Redirect or perform any other action after successful deletion
+        window.location.replace(`/mentorHome`)
       } else {
         throw new Error('Failed to delete profile');
       }
@@ -242,6 +242,14 @@ const ProfileDetailUpdate = () => {
                       label="Area of Experties"
                       onChange={(e) => setUpdatedMentor({ ...updateMentor, expertiseArea: e.target.value })}
                       defaultValue={mentor.expertiseArea}
+                    />
+
+                    {/* Status */}
+                    <TextField
+                      id="outlined-read-only-input"
+                      label="Status"
+                      onChange={(e) => setUpdatedMentor({ ...updateMentor, mentState: e.target.value })}
+                      defaultValue={mentor.mentState}
                     />
 
                   </form>

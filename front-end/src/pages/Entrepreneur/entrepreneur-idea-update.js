@@ -56,7 +56,7 @@ export default function EntrepreneurIdeaUpdate() {
       });
       if (response.ok) {
         alert("Product updated successfully");
-        // window.location.replace(`../ideadetail/${id}`)
+        window.location.replace(`/entrepreneurHome/ideadetail/${entId}`)
       } else {
         throw new Error('Failed to update Product');
       }
@@ -77,7 +77,7 @@ export default function EntrepreneurIdeaUpdate() {
         if (response.ok) {
           setDeleteSuccess(true);
           alert("Product Deleted successfully");
-          // window.location.href = `../idea`
+          window.location.replace(`/entrepreneurHome/ideadetail/${entId}`)
         } else {
           throw new Error("Failed to delete Product");
         }
