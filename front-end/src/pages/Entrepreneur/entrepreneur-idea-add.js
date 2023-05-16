@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
 import { useParams } from "react-router-dom";
+
 import { storage } from "../../components/widgets/firebase";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
+
+import Background from "../../assets/images/Entrepreneur/background.jpg";
+import TextField from '@mui/material/TextField';
 
 const EntrepreneurIdeaAdd = () => {
   const { entId } = useParams();
@@ -87,56 +89,95 @@ const EntrepreneurIdeaAdd = () => {
   };
   
   return (
-    <div className="w-[1382px] justify-center h-auto bg-sky-200 ">
-      <h1>Product Idea Creation</h1>
-      <div class="ml-4 w-[300px] h-[200px] bg-slate-300">
-        <img src={productIdea.ideaImg} alt=""/>
+    <div className="w-[1200px] justify-center h-auto ">
+      <div className="review">
+        <img src={Background} alt="" className="fixed h-auto w-auto" />
       </div>
-
-      <div className="flex-auto pl-6 pr-6">
+      
+        <div className=" ml-44 p-10 -mt-24">
         <form onSubmit={handleSubmit}>
-          {/* Image upload */}
-          <input
-              type="file"
-              name="image"
-              onChange={handleImageChange}
-              required
-            />
-          <TextField
-            id="ideaName"
-            label="Idea Name"
-            variant="outlined"
-            name="ideaName"
-            value={productIdea.ideaName}
-            onChange={handleChange}
-          />
-          <TextField
-            id="outlined-basic"
-            label="Idea Description"
-            name="ideaDescription"
-            value={productIdea.ideaDescription}
-            onChange={handleChange}
-          />
-          <TextField
-            id="outlined-basic"
-            label="Idea Industry"
-            name="ideaIndustry"
-            value={productIdea.ideaIndustry}
-            onChange={handleChange}
-          />
-          <TextField
-            id="outlined-basic"
-            label="Idea Budget"
-            name="ideaBudget"
-            value={productIdea.ideaBudget}
-            onChange={handleChange}
-          />
+          <div class="p-8 bg-gray-400 shadow mt-28 opacity-90 rounded-3xl ">
+            <h5 className="text-3xl font-serif mb-3 ml-56">Add New Innovation Idea</h5>
+            <div class="grid grid-cols-1 md:grid-cols-3">
 
-          <Button type="submit" variant="contained" color="primary">
-            Create Product Idea
-          </Button>
+              {/* profile pic */}
+              <div class="relative">
+                <div class="w-96 h-60 bg-gray-500 mx-auto rounded-xl shadow-2xl absolute mt-9 -ml-[470px] flex items-center justify-center text-slate-700 left-[500px] ">
+                  <img src={productIdea.ideaImg} alt=""/>
+                </div>
+                <div className="mr-6">
+                  <input
+                    className="mt-[300px] ml-20 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-white focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    id="default_size"
+                    type="file"
+                    name="image"
+                    onChange={handleImageChange}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="justify-center" >
+              {/* <div key={ProductIdea._id}> */}
+              <div class="flex flex-col p-[20px] w-96 -mt-[350px] mr-10 justify-center m-auto font-serif">
+                {/* Mentor private details */}
+                <form class="flex flex-col mt-[20px] gap-6 ">
+                  
+                  {/* Idea Name */}
+                  <TextField //single line
+                    id="outlined-read-only-input"
+                    label="Idea Name"
+                    name="ideaName"
+                    value={productIdea.ideaName}
+                    onChange={handleChange}
+                  />
+
+                  {/* Idea Industry */}
+                  <TextField //only 3 lines showing after that extended inside
+                    id="outlined-multiline-static"
+                    label="Idea Industry"
+                    name="ideaIndustry"
+                    value={productIdea.ideaIndustry}
+                    onChange={handleChange}
+                  />
+
+                  {/* Idea Budget*/}
+                  <TextField
+                    id="outlined-multiline-static"
+                    label="Idea Budget"
+                    type="number"
+                    name="ideaBudget"
+                    value={productIdea.ideaBudget}
+                    onChange={handleChange}
+                  />
+
+                  {/* Idea Description */}
+                  <TextField
+                    id="outlined-read-only-input"
+                    label="Description"
+                    name="ideaDescription"
+                    value={productIdea.ideaDescription}
+                    onChange={handleChange}
+                    multiline
+                    rows={2}
+                  />
+                 
+                </form>
+              </div>
+
+              <div className="flex justify-end mt-3">
+                <button
+                  className=" w-28 h-10 mr-14 -mt-1 rounded-3xl bg-cyan-700 text-black"
+                  type="submit"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
         </form>
-      </div>
+        </div>
+      
     </div>
   );
 };
