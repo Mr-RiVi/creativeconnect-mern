@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 import GroupsIcon from "@mui/icons-material/Groups";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import HomeIcon from "@mui/icons-material/Home";
 import EMobiledataIcon from "@mui/icons-material/EMobiledata";
 import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
 import SupportIcon from "@mui/icons-material/Support";
-import MarkUnreadChatAltIcon from '@mui/icons-material/MarkUnreadChatAlt';
+import MarkUnreadChatAltIcon from "@mui/icons-material/MarkUnreadChatAlt";
 
 export const SidebarData = [
   {
@@ -19,31 +18,31 @@ export const SidebarData = [
   {
     title: "Report",
     icon: <AssessmentIcon />,
-    Link: "/user/insert-user",
+    Link: "/user/UserReport",
   },
   {
     title: "Meetings",
     icon: <MarkUnreadChatAltIcon />,
-    Link: "/user/insert-user",
+    Link: "/user/sendMail",
   },
   {
     title: "Home",
     icon: <HomeIcon />,
-    Link: "/home",
+    Link: "/sign-up",
   },
   {
     title: "Entrapranure",
     icon: <EMobiledataIcon />,
-    Link: "/home",
+    Link: "/entrepreneurHome",
   },
   {
     title: "Inventor",
     icon: <EmojiObjectsIcon />,
-    Link: "/home",
+    Link: "/insert-innovation/market-potential",
   },
   {
     title: "Mentor",
     icon: <SupportIcon />,
-    Link: "/home",
+    Link: "/mentorHome",
   },
 ];

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../../assets/styles/allUsers.css";
 // import Navigation from "../../components/common/Sanjula/navbar";
 import Sidebar from "../../components/common/Sanjula/sidenavbar";
-import Header from "../../components/layout/header";
+// import Header from "../../components/layout/header";
 
 const UserList = () => {
   const [users, setUser] = useState([]);
@@ -51,8 +51,10 @@ const UserList = () => {
                         placeholder="Search by name or role"
                         value={searchTerm}
                         onChange={handleSearch}
-                        className="search-input"
+                        className="search-input bg-gray-200 rounded-lg px-4 py-2 w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-blue-400"
                       />
+                      <br></br>
+                      {/* <h1>.........................................................</h1> */}
                       <table className="table">
                         <thead className="thead">
                           <tr>
@@ -95,7 +97,7 @@ const UserList = () => {
                                           console.log(e.target.value);
                                         }}
                                       >
-                                        Edit{" "}
+                                        Edit
                                       </button>
                                     </Link>
 
@@ -109,9 +111,9 @@ const UserList = () => {
                                           console.log(e.target.value);
                                         }}
                                       >
-                                        Delete{" "}
+                                        Delete
                                       </button>
-                                      </Link>
+                                    </Link>
                                   </div>
                                 </div>
                               </td>
@@ -132,4 +134,3 @@ const UserList = () => {
 };
 
 export default UserList;
-                                   

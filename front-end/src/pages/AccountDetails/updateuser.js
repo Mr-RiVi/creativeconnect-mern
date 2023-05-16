@@ -67,123 +67,122 @@ export default function UserUpdateForm() {
     <div>
       <Sidebar />
       <div className="boder">
-      <div className="card">
-        <div className="123">
-          <h1 className="h1">Update User Details</h1>
-          <div className="4567">
-            <div className="465">
-            <br></br>
-              <div>
-                <label className="label">User Name</label>
-                <input
-                  id="fullName"
-                  name="fullName"
-                  type="text"
-                  required
-                  className="input"
-                  placeholder="User Name"
-                  onChange={(e) => {
-                    setFullName(e.target.value);
-                  }}
-                  value={fullName}
-                />
+        <div className="card">
+          <div className="123">
+            <h1 className="h1">Update User Details</h1>
+            <div className="4567">
+              <div className="465">
                 <br></br>
-              </div>
-              <div>
-                <label className="label">Email Address</label>
-                <input
-                  id="emailAdress"
-                  name="emailAdress"
-                  type="text"
-                  required
-                  className="input"
-                  placeholder="Email Address"
-                  onChange={(e) => {
-                    setEmailAddress(e.target.value);
-                  }}
-                  value={emailAddress}
-                />
-                <br></br>
-              </div>
-              <div>
-                <label className="label">contact Number </label>
-                <input
-                  id="contactNumber"
-                  name="contactNumber"
-                  type="text"
-                  required
-                  className="input"
-                  placeholder="contact Number"
-                  onChange={(e) => {
-                    setContactNumber(e.target.value);
-                  }}
-                  value={contactNumber}
-                />
-                <br></br>
-              </div>
-              <div>
-                <label className="label">Country</label>
-                <input
-                  id="country"
-                  name="country"
-                  type="text"
-                  required
-                  className="input"
-                  placeholder="country"
-                  onChange={(e) => {
-                    setCountry(e.target.value);
-                  }}
-                  value={country}
-                />
-                <br></br>
-              </div>
+                <div>
+                  <label className="label">User Name</label>
+                  <input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    required
+                    className="input"
+                    placeholder="User Name"
+                    onChange={(e) => {
+                      setFullName(e.target.value);
+                    }}
+                    value={fullName}
+                  />
+                  <br></br>
+                </div>
+                <div>
+                  <label className="label">Email Address</label>
+                  <input
+                    id="emailAdress"
+                    name="emailAdress"
+                    type="text"
+                    required
+                    className="input"
+                    placeholder="Email Address"
+                    onChange={(e) => {
+                      setEmailAddress(e.target.value);
+                    }}
+                    value={emailAddress}
+                  />
+                  <br></br>
+                </div>
+                <div>
+                  <label className="label">contact Number </label>
+                  <input
+                    id="contactNumber"
+                    name="contactNumber"
+                    type="text"
+                    required
+                    className="input"
+                    placeholder="contact Number"
+                    onChange={(e) => {
+                      setContactNumber(e.target.value);
+                    }}
+                    value={contactNumber}
+                  />
+                  <br></br>
+                </div>
+                <div>
+                  <label className="label">Country</label>
+                  <input
+                    id="country"
+                    name="country"
+                    type="text"
+                    required
+                    className="input"
+                    placeholder="country"
+                    onChange={(e) => {
+                      setCountry(e.target.value);
+                    }}
+                    value={country}
+                  />
+                  <br></br>
+                </div>
 
-              <div>
-                <label className="label">Password</label>
-                <input
-                  id="password"
-                  name="password"
-                  type="Text"
-                  required
-                  className="input"
-                  placeholder="password"
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                  }}
-                  value={password}
-                />
-                <br></br>
-              </div>
-              <div>
-                <label className="label">Role</label>
-                <input
-                  id="role"
-                  name="role"
-                  type="text"
-                  required
-                  className="input"
-                  placeholder="role"
-                  onChange={(e) => {
-                    setRole(e.target.value);
-                  }}
-                  value={role}
-                />
-              </div>
+                <div>
+                  <label className="label">Password</label>
+                  <input
+                    id="password"
+                    name="password"
+                    type="Text"
+                    required
+                    className="input"
+                    placeholder="password"
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
+                    value={password}
+                  />
+                  <br></br>
+                </div>
+                <div>
+                  <label className="label">Role</label>
+                  <input
+                    id="role"
+                    name="role"
+                    type="text"
+                    required
+                    className="input"
+                    placeholder="role"
+                    onChange={(e) => {
+                      setRole(e.target.value);
+                    }}
+                    value={role}
+                  />
+                </div>
 
-              <br></br>
-              <div className="but">
-                <button
-                  onClick={Update}
-                  className="753"
-                >
-                  Update
-                </button>
+                <br></br>
+                <div className="but">
+                  <button onClick={Update} className="753">
+                    <Link to="/user/AllUsers" className="753">
+                      Update
+                    </Link>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }
