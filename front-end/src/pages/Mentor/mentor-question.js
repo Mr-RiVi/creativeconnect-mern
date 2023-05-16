@@ -48,6 +48,8 @@ const MentorQuestion = () => {
 
     if (response.ok) {
       console.log("Question added successfully!");
+      alert("Question added successfully!");
+        window.location.replace(`/mentorHome`)
     } else {
       console.log(json.error);
     }

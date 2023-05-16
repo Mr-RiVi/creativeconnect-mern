@@ -73,6 +73,7 @@ const EntrepreneurIdeaAdd = () => {
       });
       if (response.ok) {
         alert("Product idea created successfully");
+        window.location.replace(`/entrepreneurHome/ideadetail/${entId}`)
         setProductIdea({
           ideaName: "",
           ideaDescription: "",
@@ -87,6 +88,7 @@ const EntrepreneurIdeaAdd = () => {
       console.error(error);
     }
   };
+  
   
   return (
     <div className="w-[1200px] justify-center h-auto ">
@@ -169,6 +171,7 @@ const EntrepreneurIdeaAdd = () => {
                 <button
                   className=" w-28 h-10 mr-14 -mt-1 rounded-3xl bg-cyan-700 text-black"
                   type="submit"
+                 
                 >
                   Save
                 </button>
