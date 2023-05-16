@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+import Background from "../../assets/images/Mentor/bg1.jpg";
+
 const MentorProfileQuestion = () => {
   const [mentor, setMentor] = useState({});
   const [questions, setQuestions] = useState([]);
@@ -36,19 +38,32 @@ const MentorProfileQuestion = () => {
   }, [mentor._id]);
 
   return (
-    <div className="w-[1382px] justify-center h-auto bg-sky-200" key={mentor._id}>
-      <form className="flex flex-col mt-[20px] gap-6 w-96 ml-20 mb-5">
-        <p>My Name: {mentor.mentName}</p>
-        {questions.map((question) => (
-          <div key={question._id}>
-            <p>Name: {question.empName}</p>
-            <p>Email: {question.email}</p>
-            <p>Problem: {question.description}</p>
+    <div className="w-[1000px] justify-center h-auto " key={mentor._id}>
+      <div className="review">
+        <img src={Background} alt="" className="fixed h-auto w-auto" />
+      </div>
+
+      <div className="ml-56 p-10 -mt-20">
+        <div class="p-3 bg-gray-400 shadow mt-24 opacity-90 rounded-3xl ">
+        <h5 className="text-left font-serif mb-0 ml-36">Innovation problems</h5>   
+        <p>My Name: {mentor.mentName}</p>         
+          <div class="justify-center">       
+            <div class="flex flex-col p-[20px] w-[550px] mt-1 mr-20 ml-5 justify-center m-auto font-serif">  
+              <form class="flex flex-col mt-[20px] gap-2 ">
+                {questions.map((question) => (  
+                  <div key={question._id}>
+                    <p>Name: {question.empName}</p>
+                    <p>Email: {question.email}</p>
+                    <p>Problem: {question.description}</p>
+                  </div>
+                ))}                  
+              </form>
+            </div>             
           </div>
-        ))}
-      </form>
-    </div>
+        </div>
+      </div>
+    </div> 
   );
-};
+}
 
 export default MentorProfileQuestion;
