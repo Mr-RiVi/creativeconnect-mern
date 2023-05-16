@@ -24,7 +24,7 @@ const MentorRouterHome = () => {
             <Route path="/addMentorDetails" element={<MentorDetailsAdd />}></Route>
             <Route path="/profiledetail/:id" element={<ProfileDetail />}></Route>
             <Route path="/profiledetailupdate/:id" element={<ProfileDetailUpdate />}></Route>
-            <Route path="/profiledetailcreate/:id" element={<ProfileDetailCreate />}></Route>
+            <Route path="/profiledetailcreate" element={<ProfileDetailCreate />}></Route>
             <Route path="/profiledetaildelete/:id" element={<ProfileDetailDelete />}></Route>
             <Route path="/profilequestion/:id" element={<MentorProfileQuestion />}></Route>
             <Route path="/question/:id" element={<MentorQuestion />}></Route>
