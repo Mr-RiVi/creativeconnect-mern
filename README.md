@@ -69,7 +69,9 @@ yarn install
   </li>
   
   <li>
-    <p>Open the <code>.env</code> file and update the configuration settings as required. Add the following environment variables:</p>
+    <p>
+      Open the .env file located in the back-end directory and update the configuration settings as required. Add the following environment variables:
+    </p>
     <pre><code>
       PORT=your_preferred_port
       MONGO_URI=your_mongodb_uri
@@ -118,7 +120,9 @@ yarn start
 ```
 
 6. Access the project:
-Open your web browser and navigate to http://localhost:3000.
+<p>
+  Once your React app is up and running, it will be hosted on a specific port. By default, React apps are hosted on port 3000. However, if port 3000 is   not available or if your React app is running on a different port, please ensure to use the correct port number. Open your web browser and navigate to http://localhost:{port}, where {port} represents the port number on which your React app is running.
+  </p>
 
 ## Usage
 
