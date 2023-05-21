@@ -105,7 +105,7 @@ const EntrepreneurIdeaAdd = () => {
               {/* profile pic */}
               <div class="relative">
                 <div class="w-96 h-60 bg-gray-500 mx-auto rounded-xl shadow-2xl absolute mt-9 -ml-[470px] flex items-center justify-center text-slate-700 left-[500px] ">
-                  <img src={productIdea.ideaImg} alt=""/>
+                  <img src={productIdea.ideaImg} alt="" className="w-60"/>
                 </div>
                 <div className="mr-6">
                   <input

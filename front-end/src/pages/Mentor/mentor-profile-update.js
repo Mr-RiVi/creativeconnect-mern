@@ -202,6 +202,16 @@ const ProfileDetailUpdate = () => {
                       defaultValue={mentor.mentName}
                     />
 
+                    {/* Role */}
+                    <TextField  //single line
+                    id="outlined-read-only-input"
+                    label="Role"
+                    defaultValue={mentor.role}
+                    InputProps={{
+                      readOnly: true,
+                    }}
+                  />
+                  
                     {/* Description */}
                     <TextField
                       id="outlined-read-only-input"

@@ -78,17 +78,15 @@ const ProfileDetail = () => {
               </p>
 
               {/* socail media buttons */}
-              <div className="flex flex-row items-center gap-6 ml-[510px] mt-5">
-                    <Button size="lg" color="white" className="flex items-center gap-3">
-                      <img src={fb} alt="metamask" className="h-10 w-10" />
-                    </Button>
-                    <Button size="lg" color="white" className="flex items-center gap-3">
-                      <img src={gmail} alt="metamask" className="h-11 w-11" />
-                    </Button>
-                    <Button size="lg" color="white" className="flex items-center gap-3">
-                      <img src={linkedin} alt="metamask" className="h-10 w-10" />
-                    </Button>
+              <div className="flex flex-row items-center gap-6 ml-[545px] mt-5">
+                <a href={mentor.fbLink} target="_blank" rel="noopener noreferrer">
+                  <img src={fb} alt="Facebook" className="h-10 w-10" />
+                </a>
+                <a href={mentor.linkedinLink} target="_blank" rel="noopener noreferrer">
+                  <img src={linkedin} alt="LinkedIn" className="h-10 w-10" />
+                </a>
               </div>
+
             </div>
 
            
@@ -104,6 +102,16 @@ const ProfileDetail = () => {
                   id="outlined-read-only-input"
                   label="Name"
                   defaultValue={mentor.mentName}
+                  InputProps={{
+                    readOnly: true,
+                  }}
+                />
+
+                  {/* Role */}
+                  <TextField  //single line
+                  id="outlined-read-only-input"
+                  label="Role"
+                  defaultValue={mentor.role}
                   InputProps={{
                     readOnly: true,
                   }}

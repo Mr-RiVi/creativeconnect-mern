@@ -138,8 +138,8 @@ const MentorReport = () => {
   return (
     <div className="w-[1400px] bg-gray-200">
       {/* check keywords */}
-      <h1>Graph 1: Mentor Details</h1>
-      <div className='ml-[400px]'>
+      <h1 className='ml-96 pt-3'>Graph 1: Mentor Details</h1>
+      <div className='ml-[500px] mb-3'>
         
         <div id="chart">
             <ReactApexChart
@@ -150,9 +150,10 @@ const MentorReport = () => {
             />
         </div>
       </div>
+
       {/* verified or not verified */}
-      <h1>Graph 2: Verified status of Mentor</h1>
-      <div className='ml-[200px]'>
+      <h1 className='ml-96'>Graph 2: Verified status of Mentor</h1>
+      <div className='ml-[300px] '>
       
         <ReactApexChart options={optionsV} series={optionsV.series} type="bar" height={200} width={800} />
       </div>

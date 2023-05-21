@@ -136,6 +136,10 @@ const EntrepreneurIdeaDetail = () => {
                       </p>
                     </div>
 
+                    <div class="flex space-x-2 text-sm font-medium bg-sky-100 mb-4 w-80 ">
+                      <p>Budget : RS.{product.ideaBudget}.00</p>
+                      </div>
+
                     <div class="flex space-x-2 mb- text-sm font-medium">
                       <div class="flex space-x-4">
 
