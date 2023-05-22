@@ -38,7 +38,7 @@ export const SidebarData = [
   {
     title: "Inventor",
     icon: <EmojiObjectsIcon />,
-    Link: "/insert-innovation/market-potential",
+    Link: "/inventor/innovation-vault",
   },
   {
     title: "Mentor",
