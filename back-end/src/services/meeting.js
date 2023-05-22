@@ -38,7 +38,6 @@ export const getAllMeetings = async () => {
 
 //Updating meeting details
 export const updatemeetingById = async (id, ob) => {
-  console.log(ob);
   const y = await updateMeeting(id, ob);
   return y;
 };

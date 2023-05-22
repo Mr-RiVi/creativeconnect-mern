@@ -30,7 +30,6 @@ export const getUserAccount = async (id) => {
 export const getUserAccounts = async () => {
   try {
     const a = await UserAccount.find().sort({ createdAt: -1 });
-    console.log(a);
     return a;
   } catch (error) {
     return { msg: 'No User accounts found' };

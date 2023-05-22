@@ -1,10 +1,9 @@
 // import MeetingTable from '../models/meeting.js';
-import MeetingTable from '../models/meeting.js'
+import MeetingTable from '../models/meeting.js';
 // adding meeting details
 export const createMeeting = async (details) => {
-  console.log(details);
   try {
-    const meetingTable = new MeetingTable ({
+    const meetingTable = new MeetingTable({
       meetingId: details.meetingId,
       password: details.password,
       discription: details.discription,
@@ -28,7 +27,6 @@ export const getmeeting = async (id) => {
 export const getmeetings = async () => {
   try {
     const a = await MeetingTable.find().sort({ createdAt: -1 });
-    console.log(a);
     return a;
   } catch (error) {
     return { msg: 'No Meetings found' + error.message };

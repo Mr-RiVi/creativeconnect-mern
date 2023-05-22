@@ -20,12 +20,11 @@ const user_accountSchema = mongoose.Schema(
     country: {
       type: String,
       required: true,
-      unique: true,
     },
     password: {
       type: String,
       required: true,
-      unique: true,
+      unique: false,
     },
     role: {
       type: String,

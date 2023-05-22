@@ -12,7 +12,6 @@ import "../../assets/styles/basicInnovationInformation.css";
 import { industries, stages } from "../../utils/innovationRelatedData";
 import { storage } from "../../config/firebaseConfig.js";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { v4 } from "uuid";
 import Header from "../../components/layout/headerInventor.js";
 
 const TITLE_REGEX = /^[\w\s\.,!?"'&()@#%^*+=-]{1,255}$/;
