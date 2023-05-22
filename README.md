@@ -5,8 +5,6 @@ Our platform is an innovative online solution that addresses limited access to r
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Documentation](#documentation)
-- [Code Examples](#code-examples)
 - [Contributions](#contributions)
 - [License](#license)
 - [Support and Contact](#support-and-contact)
@@ -86,7 +84,10 @@ yarn install
   </li>
 </ol>
 
-5. Start the project:
+## Usage
+
+
+1. Start the project:
 <li>
   For the back-end, navigate to the <em>back-end</em> folder:
   </br>
@@ -119,22 +120,10 @@ npm start
 yarn start
 ```
 
-6. Access the project:
+2. Access the project:
 <p>
   Once your React app is up and running, it will be hosted on a specific port. By default, React apps are hosted on port 3000. However, if port 3000 is   not available or if your React app is running on a different port, please ensure to use the correct port number. Open your web browser and navigate to http://localhost:{port}, where {port} represents the port number on which your React app is running.
-  </p>
-
-## Usage
-
-[Instructions on how to use the project]
-
-## Documentation
-
-[Link or description of project documentation]
-
-## Code Examples
-
-[Code examples or snippets demonstrating project functionalities]
+ </p>
 
 ## Contributions
 
