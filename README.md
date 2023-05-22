@@ -127,7 +127,75 @@ yarn start
 
 ## Contributions
 
-[Guidelines for contributing to the project]
+We welcome contributions from the community to enhance the project. To contribute, please follow these guidelines:
+
+1. Fork the repository:
+<ul>
+  <li>Click on the 'Fork' button on the top right corner of this repository's page.</li>
+  <li>This will create a copy of the repository in your GitHub account.</li>
+</ul>
+
+2. Clone the repository:
+<ul>
+  <li>
+Clone the forked repository to your local machine using the following command:
+  </li>
+</ul>
+
+```sh
+git clone https://github.com/your-username/creativeconnect-mern.git
+```
+Replace 'your-username' with your GitHub username.
+
+3. Create a new branch:
+<ul>
+  <li>
+Move into the project's directory:
+  </li>
+</ul>
+
+```sh
+cd creativeconnect-mern
+```
+<ul>
+  <li>
+Create a new branch for your contribution:
+  </li>
+</ul>
+
+```sh
+git checkout -b feature/new-feature
+```
+<ul>
+  <li>
+Provide a descriptive name for the branch that reflects the purpose of your contribution.
+  </li>
+</ul>
+
+
+4. Make your changes:
+<ul>
+  <li>Make the necessary changes and improvements to the project codebase.</li>
+</ul>
+
+5. Commit your changes:
+<ul>
+  <li>Stage the changes for commit</li>
+  <li>Commit the changes with a descriptive message</li>
+  <li>Push your changes</li>  
+</ul>
+
+6. Create a pull request:
+<ul>
+  <li>Go to the original repository on GitHub.</li>
+  <li>Click on the 'New Pull Request' button.</li>
+  <li>Provide a descriptive title and explanation of your changes.</li>
+  <li>Submit the pull request for review.</li>
+</ul>
+
+<p>Our team will review your contribution and provide feedback. Thank you for helping improve the project!</p>
+<p>Note: By contributing to this project, you agree to license your contribution under the project's license.</p>
+
 
 ## License
 
@@ -135,14 +203,35 @@ yarn start
 
 ## Support and Contact
 
-[Information on how users can seek support or contact the project maintainers]
+<p>If you have any questions, issues, or need assistance with the project, please feel free to reach out to us via email:</p>
+<ul>
+  <li>Email: For any inquiries or support requests, you can contact us at fernandorivindu2@gmail.com.</li>
+</ul>
+<p>We'll do our best to respond to your queries promptly.</p>
 
 ## Project Status and Roadmap
 
-[Current status of the project and future plans]
+<p>Currently, we are in the front-end development phase of the project. Our team is working hard to create an intuitive and user-friendly web application. We are focused on implementing the best practices and leveraging modern technologies to deliver a high-quality product.</p>
+
+<p>Our roadmap for the project includes the following milestones:</p>
+<ul>
+  <li>Complete front-end development and UI/UX enhancements</li>
+  <li>Integrate back-end functionality and APIs</li>
+  <li>Conduct thorough testing and debugging</li>
+  <li>Implement additional features and improvements based on user feedback</li>
+  <li>Prepare for a production-ready release</li>
+</ul>
+
+<p>We are committed to delivering a robust and reliable web application that meets the needs of our users. Stay tuned for updates as we make progress towards our goals.</p>
 
 ## Acknowledgments
 
-[Acknowledgments and credits]
+<p>We would like to express our gratitude to the following individuals for their contributions, support, and inspiration throughout the development of this project:</p>
+<ul>
+  <li><a href="https://github.com/SLxMAJOR">Sanjula De Silva</a>: Thank you for your valuable insights and feedback during the early stages of the project, as well as your contributions to the user management part.</li>
+  <li><a href="https://github.com/DKxNK">DK Nalinga Kumarasiri</a>: Thank you for your valuable insights and feedback during the early stages of the project, as well as your contributions to the mentoring service implementation.</li>
+  <li><a href="https://github.com/Maleesha-Shavindi">Maleesha Shavindi</a>: Thank you for your valuable insights and feedback during the early stages of the project, as well as your contributions to the entrepreneur service implementation.</li>
+</ul>
+
 
 
