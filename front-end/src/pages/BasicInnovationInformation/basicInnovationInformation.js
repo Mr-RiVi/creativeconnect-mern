@@ -10,6 +10,10 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 import "../../assets/styles/basicInnovationInformation.css";
 import { industries, stages } from "../../utils/innovationRelatedData";
+import { storage } from "../../config/firebaseConfig.js";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { v4 } from "uuid";
+import Header from "../../components/layout/headerInventor.js";
 
 const TITLE_REGEX = /^[\w\s\.,!?"'&()@#%^*+=-]{1,255}$/;
 
@@ -19,6 +23,7 @@ function BasicInnovationInformation() {
   const titleRef = useRef();
   const errRef = useRef();
 
+  const [imageUrl, setImageUrl] = useState("");
   const [title, setTitle] = useState("");
   const [validTitle, setvalidTitle] = useState(false);
   const [titleFocus, settitleFocus] = useState(false);
@@ -46,7 +51,7 @@ function BasicInnovationInformation() {
   }, [title]);
 
   //logic when user submit the form
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const v = TITLE_REGEX.test(title);
@@ -56,6 +61,7 @@ function BasicInnovationInformation() {
     }
 
     // Store the basic details in session storage
+    sessionStorage.setItem("imageUrl", imageUrl);
     sessionStorage.setItem("title", title);
     sessionStorage.setItem("industry", industry);
     sessionStorage.setItem("stage", stage);
@@ -63,8 +69,24 @@ function BasicInnovationInformation() {
 
     navigate("./market-potential");
   };
+
+  const handleImageUpload = async (event) => {
+    event.preventDefault();
+    const file = event.target.files[0];
+    const storageRef = ref(storage, `images/${file.name}`);
+    try {
+      const snapshot = await uploadBytes(storageRef, file);
+      const imageUrl = await getDownloadURL(snapshot.ref);
+      setImageUrl(imageUrl);
+      console.log("Image uploaded successfully:", imageUrl);
+    } catch (error) {
+      console.log("Error uploading image:", error);
+    }
+  };
+
   return (
     <section className="main-section">
+      <Header />
       {/* Error messsage display section */}
       <p id="errorMessage" ref={errRef}>
         {errorMsg}
@@ -77,6 +99,26 @@ function BasicInnovationInformation() {
 
       {/* form starting point */}
       <form onSubmit={handleSubmit}>
+        {/* image upload section */}
+        <div className="image-preview-container">
+          {imageUrl ? (
+            <img className="image-preview" src={imageUrl} alt="Image Preview" />
+          ) : (
+            <div className="upload-overlay">
+              <label htmlFor="upload-input">
+                <span>Upload Image</span>
+                <input
+                  id="upload-input"
+                  type="file"
+                  onChange={handleImageUpload}
+                  accept="image/*"
+                />
+              </label>
+            </div>
+          )}
+        </div>
+        <br />
+
         {/* title section */}
         <lable htmlFor="title">
           TITLE:
@@ -105,6 +147,7 @@ function BasicInnovationInformation() {
           }}
         />
         <br />
+        <br />
 
         {/* industry section */}
         <lable htmlFor="industry">INDUSTRY:</lable>
@@ -123,6 +166,7 @@ function BasicInnovationInformation() {
             </option>
           ))}
         </select>
+        <br />
         <br />
 
         {/* stage section */}
@@ -168,6 +212,7 @@ function BasicInnovationInformation() {
           ))}
         </select>
         <br />
+        <br />
 
         {/* description section */}
         <lable htmlFor="description">DESCRIPTION:</lable>
@@ -183,9 +228,10 @@ function BasicInnovationInformation() {
           />
         </section>
         <br />
+        <br />
 
         <div className="submitButton">
-          <button>NEXT</button>
+          <button className="next-button">NEXT</button>
         </div>
       </form>
     </section>

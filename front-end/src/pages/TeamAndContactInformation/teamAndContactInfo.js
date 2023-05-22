@@ -14,6 +14,7 @@ import { ExpandMore } from "@material-ui/icons";
 import { tooltips } from "../../utils/innovationRelatedData";
 import Tooltip from "@mui/material/Tooltip";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import Header from "../../components/layout/headerInventor.js";
 
 const INNOVATION_INSERT_URL =
   "http://localhost:3000/api/innovation/insertInnovation";
@@ -64,6 +65,7 @@ const TeamAndContactInfo = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const imageUrl = sessionStorage.getItem("imageUrl");
     const title = sessionStorage.getItem("title");
     const industry = sessionStorage.getItem("industry");
     const stage = sessionStorage.getItem("stage");
@@ -112,6 +114,7 @@ const TeamAndContactInfo = () => {
     );
 
     const innovationDetails = {
+      imageUrl,
       title,
       industry,
       stage,
@@ -176,6 +179,7 @@ const TeamAndContactInfo = () => {
   };
   return (
     <section className="main-section">
+      <Header />
       {/* Team information section */}
       <h1 className="main-sections-headings">Team Information</h1>
       <form onSubmit={handleSubmit}>
@@ -339,7 +343,7 @@ const TeamAndContactInfo = () => {
           value={address}
         />
         <br />
-        <button>Launch Innovation</button>
+        <button className="next-button">Launch Innovation</button>
       </form>
     </section>
   );

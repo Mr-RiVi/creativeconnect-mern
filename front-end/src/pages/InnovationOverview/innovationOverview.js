@@ -5,12 +5,17 @@ import { useLocation, useNavigate } from "react-router-dom";
 import DOMPurify from "dompurify";
 
 import "../../assets/styles/overview2.css";
+import DeleteConfirmationModal from "../../components/common/deleteConfirmationModal.js";
+import Header from "../../components/layout/headerInventor.js";
+
 const INNOVATION_RETRIEVE_URL =
   "http://localhost:3000/api/innovation/getInnovation/";
 
 const InnovationOverview = () => {
   const navigate = useNavigate();
   const [innovation, setInnovation] = useState({});
+
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 
   // Sanitize the description
   const cleanDescription = DOMPurify.sanitize(innovation.description);
@@ -44,18 +49,27 @@ const InnovationOverview = () => {
     navigate(`../innovation-update?id=${innovation._id}`);
   };
 
+  const toggleDeleteConfirmation = () => {
+    setShowDeleteConfirmation((prevValue) => !prevValue);
+  };
+
+  const handleDelete = () => {
+    toggleDeleteConfirmation();
+  };
+
   useEffect(() => {
     retrieveInnovation();
   }, []);
 
   return (
     <section className="main-section">
+      <Header />
       <section>
         <section className="first-section">
           <div className="main-image-area">
             <img
               className="main-image"
-              src="https://m.economictimes.com/thumb/msid-63758366,width-1200,height-900,resizemode-4,imgsize-48262/innovation-2.jpg"
+              src={innovation.imageUrl}
               alt="Innovation Image"
             />
           </div>
@@ -367,9 +381,21 @@ const InnovationOverview = () => {
           )}
         </section>
       </section>
-      <button onClick={naviageReportPage}>Calculate Valuation</button>
-      <button onClick={naviageUpdatePage}>Update innovation</button>
-      <button>Delete innovation</button>
+      <button className="button" onClick={naviageReportPage}>
+        Calculate Valuation
+      </button>
+      <button className="button" onClick={naviageUpdatePage}>
+        Update innovation
+      </button>
+      {showDeleteConfirmation && (
+        <DeleteConfirmationModal
+          toggleDeleteConfirmation={toggleDeleteConfirmation}
+          innovationId={id}
+        />
+      )}
+      <button className="button" onClick={handleDelete}>
+        {showDeleteConfirmation ? "Confirm Delete" : "Delete innovation"}
+      </button>
     </section>
   );
 };

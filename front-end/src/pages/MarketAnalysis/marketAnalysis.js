@@ -10,6 +10,7 @@ import {
   competitionOptions,
   timeToPenetrateMarketAndAchieveProfitabilityOptions,
 } from "../../utils/innovationRelatedData";
+import Header from "../../components/layout/headerInventor.js";
 
 const MarketAnalysis = () => {
   const navigate = useNavigate();
@@ -73,6 +74,7 @@ const MarketAnalysis = () => {
   };
   return (
     <section className="main-section">
+      <Header />
       <h1 className="main-sections-headings">
         Market Potential
         <Tooltip
@@ -124,8 +126,6 @@ const MarketAnalysis = () => {
                   setTargetMarket(e.target.value);
                 }}
                 value={targetMarket}
-                // onFocus={setTargetMarketFocus(true)}
-                // onBlur={setTargetMarketFocus(false)}
               />
             </td>
             {/* marketSize section */}
@@ -543,7 +543,7 @@ const MarketAnalysis = () => {
           </Tooltip>
         </dev>
         <div className="submitButton">
-          <button>NEXT</button>
+          <button className="next-button">NEXT</button>
         </div>
       </form>
     </section>

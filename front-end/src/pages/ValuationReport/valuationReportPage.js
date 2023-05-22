@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import "../../assets/styles/priceReportPage.css";
+import Header from "../../components/layout/headerInventor.js";
 
 const REPORT_INFO_RETRIEVE_URL =
   "http://localhost:3000/api/innovation/get-estiamted-value/";
@@ -45,8 +46,10 @@ const ValuationReportPage = () => {
   useEffect(() => {
     retrieveReportInfo();
   }, []);
+
   return (
     <section className="main-section">
+      <Header />
       <h1>Estimate Innovation Price Report</h1>
       <section className="intro">
         <h3>Introduction</h3>

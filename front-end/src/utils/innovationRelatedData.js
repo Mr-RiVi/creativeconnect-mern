@@ -10,7 +10,8 @@ export const industries = [
   "Environmental technology",
   "Finance",
   "Food and beverage",
-  "Health care",
+  "Healthcare",
+  "Hospitality",
   "Information technology",
   "Manufacturing",
   "Media and entertainment",
@@ -19,6 +20,7 @@ export const industries = [
   "Retail",
   "Telecommunications",
   "Transportation",
+  "Technology",
   "Utilities",
 ];
 

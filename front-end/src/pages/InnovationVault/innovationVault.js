@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import "../../assets/styles/innovationCard.css";
 import "../../assets/styles/inventorSearchBar.css";
+import Header from "../../components/layout/headerInventor.js";
 
 const INNOVATION_FETCH_URL =
   "http://localhost:3000/api/innovation/getAllInnovation";
@@ -25,8 +26,8 @@ const InnovationVault = () => {
   const fetchInnovations = async () => {
     try {
       const response = await axios.get(INNOVATION_FETCH_URL);
-      if (response.status >= 200 && response.status < 300) {
-        setInnovations(response?.data);
+      if (response?.status >= 200 && response?.status < 300) {
+        setInnovations(response.data);
 
         // successful response
         console.log("Response is successful");
@@ -71,6 +72,7 @@ const InnovationVault = () => {
   }, [searchTerm]);
   return (
     <div class="container">
+      <Header />
       <h1>Innovations</h1>
       <section className="search-bar">
         <form onSubmit={handleSearchSubmit}>
@@ -81,7 +83,6 @@ const InnovationVault = () => {
               setSearchTerm(e.target.value);
             }}
           />
-          <button type="submit">Search</button>
         </form>
       </section>
       <section className="vault-section">
@@ -89,7 +90,7 @@ const InnovationVault = () => {
           <div className="card">
             <div className="image">
               <img
-                src="https://placehold.it/300x200"
+                src={innovation.imageUrl}
                 alt="Card Image"
                 className="card-img"
               />
@@ -99,7 +100,12 @@ const InnovationVault = () => {
               <p className="card-industry">Industry : {innovation.industry}</p>
               <p className="card-stage">Stage : {innovation.stage}</p>
               <p className="card-description">
-                {truncateText(innovation.description, 80)}
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: truncateText(innovation.description, 80),
+                  }}
+                ></p>
+                {}
               </p>
             </div>
             <div className="button">

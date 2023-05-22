@@ -10,13 +10,3 @@ input[type="text"] {
   border: 1px solid #ccc;
   width: 500px;
 }
-
-button[type="submit"] {
-  padding: 10px;
-  border-radius: 0 5px 5px 0;
-  border: none;
-  background-color: #ffd700;
-  color: #fff;
-  cursor: pointer;
-  width: 100px;
-}

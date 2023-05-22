@@ -5,6 +5,7 @@ import Tooltip from "@mui/material/Tooltip";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 import { tooltips } from "../../utils/innovationRelatedData";
+import Header from "../../components/layout/headerInventor.js";
 
 const FinancingAndPatentInfo = () => {
   const navigate = useNavigate();
@@ -56,6 +57,7 @@ const FinancingAndPatentInfo = () => {
 
   return (
     <section className="main-section">
+      <Header />
       <h1 className="main-sections-headings">
         Funding needs
         <Tooltip
@@ -290,7 +292,9 @@ const FinancingAndPatentInfo = () => {
           </p>
           <br />
         </div>
-        <button disabled={!isChecked ? true : false}>NEXT</button>
+        <button className="next-button" disabled={!isChecked ? true : false}>
+          NEXT
+        </button>
       </form>
     </section>
   );

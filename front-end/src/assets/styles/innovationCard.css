@@ -71,3 +71,8 @@
 .button button:hover {
   background-color: #ffc107;
 }
+
+.image {
+  width: 250px;
+  height: 250px;
+}
