@@ -50,9 +50,9 @@ const ValuationReportPage = () => {
   return (
     <section className="main-section">
       <Header />
-      <h1>Estimate Innovation Price Report</h1>
+      <h1 className="h1-headings">Estimate Innovation Price Report</h1>
       <section className="intro">
-        <h3>Introduction</h3>
+        <h3 className="h3-headings">Introduction</h3>
         <p>
           The purpose of this report is to provide a comprehensive analysis of
           the estimated price for a particular innovation. The innovation under
@@ -67,7 +67,7 @@ const ValuationReportPage = () => {
       </section>
 
       <section className="methodology">
-        <h3>Methodology</h3>
+        <h3 className="h3-headings">Methodology</h3>
         <p>
           We used a regression model to analyze the relationship between the
           input data and the estimated value of the innovation. The model used
@@ -85,7 +85,7 @@ const ValuationReportPage = () => {
       </section>
 
       <section className="results">
-        <h3>Results</h3>
+        <h3 className="h3-headings">Results</h3>
         <h4>
           Estimated Price: {"Rs."}
           {reportDetails.estimatedInnovationPrice}
@@ -134,7 +134,7 @@ const ValuationReportPage = () => {
       </section>
 
       <section className="analysis">
-        <h3>Analysis</h3>
+        <h3 className="h3-headings">Analysis</h3>
         <p>
           The results of our analysis show that the model is able to predict
           innovation price with a high degree of accuracy, with an R-squared
@@ -167,7 +167,7 @@ const ValuationReportPage = () => {
       </section>
 
       <section className="conclusion">
-        <h3>Conclusion</h3>
+        <h3 className="h3-headings">Conclusion</h3>
         <p>
           In conclusion, our analysis shows that market size, market demand,
           level of competition, time to profitability, estimated cost, target

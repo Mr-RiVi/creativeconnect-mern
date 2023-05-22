@@ -4,7 +4,7 @@
   margin-bottom: 20px;
 }
 
-input[type="text"] {
+.search-bar input[type="text"] {
   padding: 10px;
   border-radius: 5px 0 0 5px;
   border: 1px solid #ccc;

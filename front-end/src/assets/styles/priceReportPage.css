@@ -1,38 +1,28 @@
-/* Set font family and size for the entire document */
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-}
-
 /* Style the main heading */
-h1 {
+.h1-headings {
   font-size: 32px;
   text-align: center;
   margin-bottom: 40px;
 }
 
 /* Style the section headings */
-h3 {
+.h3-headings {
   font-size: 24px;
   margin-top: 40px;
   margin-bottom: 20px;
 }
 
 /* Add some spacing between paragraphs */
-p {
+/* p {
+  margin-bottom: 20px;
+} */
+.main-section p ul li {
   margin-bottom: 20px;
 }
 
-/* Style the unordered list */
-ul {
-  margin-bottom: 20px;
+.main-section ul li {
+  margin-left: 80px;
 }
-
-/* Style the list items */
-li {
-  margin-bottom: 10px;
-}
-
 /* Set a background color for the sections */
 .main-section,
 .intro,
@@ -43,9 +33,6 @@ li {
   background-color: #f5f5f5;
   padding: 5px;
   margin-bottom: 5px;
-}
-ul li {
-  margin-left: 80px;
 }
 /* Style the estimated price heading */
 .results h4 {
