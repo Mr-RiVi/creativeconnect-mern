@@ -2,6 +2,9 @@ import mongoose from 'mongoose';
 
 const innovationSchema = mongoose.Schema(
   {
+    imageUrl: {
+      type: String,
+    },
     title: {
       type: String,
       required: true,
@@ -26,7 +29,7 @@ const innovationSchema = mongoose.Schema(
         type: String,
       },
       marketSize: {
-        type: String,
+        type: Number,
       },
       demand: {
         type: String,
@@ -40,17 +43,17 @@ const innovationSchema = mongoose.Schema(
       marketingStrategies: {
         type: String,
       },
-      TimeToPenetrateMarketAndAchieveProfitability: {
+      timeToPenetrateMarketAndAchieveProfitability: {
         type: String,
       },
 
       //Competitive Pricing Analysis..........
       competitivePricingAnalysis: {
         estimatedCost: {
-          type: String,
+          type: Number,
         },
         targetSellingPrice: {
-          type: String,
+          type: Number,
         },
         competition: {
           type: String,
@@ -67,7 +70,7 @@ const innovationSchema = mongoose.Schema(
     //Funding needs...........................
     fundingNeeds: {
       fundingNeeded: {
-        type: String,
+        type: Number,
       },
       useOfFunds: {
         type: String,
@@ -155,6 +158,9 @@ const innovationSchema = mongoose.Schema(
       address: {
         type: String,
       },
+    },
+    estimatedPrice: {
+      type: Number,
     },
   },
   {

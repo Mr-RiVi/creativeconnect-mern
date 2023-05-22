@@ -9,50 +9,21 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 import "../../assets/styles/basicInnovationInformation.css";
+import { industries, stages } from "../../utils/innovationRelatedData";
+import { storage } from "../../config/firebaseConfig.js";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { v4 } from "uuid";
+import Header from "../../components/layout/headerInventor.js";
 
 const TITLE_REGEX = /^[\w\s\.,!?"'&()@#%^*+=-]{1,255}$/;
 
-const industries = [
-  "Agriculture",
-  "Automotive",
-  "Biotechnology",
-  "Chemical",
-  "Construction",
-  "Consumer goods",
-  "Education",
-  "Energy",
-  "Environmental technology",
-  "Finance",
-  "Food and beverage",
-  "Health care",
-  "Information technology",
-  "Manufacturing",
-  "Media and entertainment",
-  "Mining",
-  "Pharmaceuticals",
-  "Retail",
-  "Telecommunications",
-  "Transportation",
-  "Utilities",
-];
-
-const stages = [
-  "Ideation",
-  "Concept Development",
-  "Proof of Concept",
-  "Prototype Development",
-  "Product Development",
-  "Launch",
-  "Growth",
-  "Maturity",
-  "Decline",
-];
-
 function BasicInnovationInformation() {
   const navigate = useNavigate();
+
   const titleRef = useRef();
   const errRef = useRef();
 
+  const [imageUrl, setImageUrl] = useState("");
   const [title, setTitle] = useState("");
   const [validTitle, setvalidTitle] = useState(false);
   const [titleFocus, settitleFocus] = useState(false);
@@ -72,7 +43,7 @@ function BasicInnovationInformation() {
   }, []);
 
   useEffect(() => {
-    setvalidTitle(TITLE_REGEX.test(title)); // title eka wens weddi regex eka through check krnw valid d kiyla valid nm true else false validTitle state eka set krnw
+    setvalidTitle(TITLE_REGEX.test(title));
   }, [title]);
 
   useEffect(() => {
@@ -90,6 +61,7 @@ function BasicInnovationInformation() {
     }
 
     // Store the basic details in session storage
+    sessionStorage.setItem("imageUrl", imageUrl);
     sessionStorage.setItem("title", title);
     sessionStorage.setItem("industry", industry);
     sessionStorage.setItem("stage", stage);
@@ -97,8 +69,24 @@ function BasicInnovationInformation() {
 
     navigate("./market-potential");
   };
+
+  const handleImageUpload = async (event) => {
+    event.preventDefault();
+    const file = event.target.files[0];
+    const storageRef = ref(storage, `images/${file.name}`);
+    try {
+      const snapshot = await uploadBytes(storageRef, file);
+      const imageUrl = await getDownloadURL(snapshot.ref);
+      setImageUrl(imageUrl);
+      console.log("Image uploaded successfully:", imageUrl);
+    } catch (error) {
+      console.log("Error uploading image:", error);
+    }
+  };
+
   return (
     <section className="main-section">
+      <Header />
       {/* Error messsage display section */}
       <p id="errorMessage" ref={errRef}>
         {errorMsg}
@@ -111,6 +99,26 @@ function BasicInnovationInformation() {
 
       {/* form starting point */}
       <form onSubmit={handleSubmit}>
+        {/* image upload section */}
+        <div className="image-preview-container">
+          {imageUrl ? (
+            <img className="image-preview" src={imageUrl} alt="Image Preview" />
+          ) : (
+            <div className="upload-overlay">
+              <label htmlFor="upload-input">
+                <span>Upload Image</span>
+                <input
+                  id="upload-input"
+                  type="file"
+                  onChange={handleImageUpload}
+                  accept="image/*"
+                />
+              </label>
+            </div>
+          )}
+        </div>
+        <br />
+
         {/* title section */}
         <lable htmlFor="title">
           TITLE:
@@ -139,6 +147,7 @@ function BasicInnovationInformation() {
           }}
         />
         <br />
+        <br />
 
         {/* industry section */}
         <lable htmlFor="industry">INDUSTRY:</lable>
@@ -158,6 +167,7 @@ function BasicInnovationInformation() {
           ))}
         </select>
         <br />
+        <br />
 
         {/* stage section */}
         <lable htmlFor="stage">
@@ -168,70 +178,13 @@ function BasicInnovationInformation() {
                 <h2 calssName="tooltipHeading">Stage Descriptions:</h2>
                 <br />
                 <ul className="tooltipUL">
-                  <ul>
+                  {stages.map((stage) => (
                     <li>
-                      <strong>Ideation:</strong> This is the stage where you
-                      generate an idea for a new product or service by
-                      brainstorming, conducting market research, and identifying
-                      customer needs and pain points.
+                      <strong>{stage.name}: </strong>
+                      {stage.description}
+                      <br />
                     </li>
-                    <br />
-                    <li>
-                      <strong>Concept Development:</strong> Here, you refine and
-                      develop the idea further by creating a clear definition,
-                      developing a business model, and identifying potential
-                      target customers. Proof of Concept: In this stage, you
-                      create a prototype or model of the product or service to
-                      test its feasibility and potential.
-                    </li>
-                    <br />
-                    <li>
-                      <strong>Proof of Concept:</strong>In this stage, you
-                      create a prototype or model of the product or service to
-                      test its feasibility and potential.
-                    </li>
-                    <br />
-                    <li>
-                      <strong>Prototype Development:</strong> After the proof of
-                      concept stage, a more advanced prototype is developed to
-                      test the product or service in more detail.
-                    </li>
-                    <br />
-                    <li>
-                      <strong>Product Development:</strong> This is the stage
-                      where the final product is developed for commercial use,
-                      including product design, engineering, and manufacturing.
-                    </li>
-                    <br />
-                    <li>
-                      <strong>Launch:</strong> The product or service is
-                      introduced to the market, which can include creating
-                      marketing campaigns, pricing strategies, and distribution
-                      channels.
-                    </li>
-                    <br />
-                    <li>
-                      <strong>Growth:</strong> The product or service should
-                      ideally begin to grow in popularity and usage, including
-                      expanding distribution, improving customer satisfaction,
-                      and developing new features or product lines.
-                    </li>
-                    <br />
-                    <li>
-                      <strong>Maturity:</strong> The product or service is
-                      well-established and has a loyal customer base, which can
-                      include maintaining profitability, optimizing production,
-                      and exploring new markets or opportunities.
-                    </li>
-                    <br />
-                    <li>
-                      <strong>Decline:</strong>The product or service begins to
-                      lose market share and may become less profitable,
-                      including identifying the reasons for the decline and
-                      potentially discontinuing the product or service.
-                    </li>
-                    <br />
-                  </ul>
+                  ))}
                 </ul>
               </div>
             }
@@ -252,12 +205,13 @@ function BasicInnovationInformation() {
           value={stage}
         >
           <option disabled>Select a Stage</option>
-          {stages.map((cv_stage) => (
-            <option key={cv_stage} value={cv_stage}>
-              {cv_stage}
+          {stages.map((stage) => (
+            <option key={stage.name} value={stage.name}>
+              {stage.name}
             </option>
           ))}
         </select>
+        <br />
         <br />
 
         {/* description section */}
@@ -274,9 +228,10 @@ function BasicInnovationInformation() {
           />
         </section>
         <br />
+        <br />
 
         <div className="submitButton">
-          <button>NEXT</button>
+          <button className="next-button">NEXT</button>
         </div>
       </form>
     </section>

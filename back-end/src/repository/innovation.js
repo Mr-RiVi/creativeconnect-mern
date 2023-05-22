@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
 import createInnovation from '../models/innovation.js';
 
 export const insertInnovationDetails = async (innovation) => {
   const {
+    imageUrl,
     title,
     industry,
     stage,
@@ -12,9 +12,11 @@ export const insertInnovationDetails = async (innovation) => {
     intellectualPropertyInformation,
     teamMembers,
     contactInformation,
+    estimatedPrice,
   } = innovation;
   try {
     const InnovationCreate = new createInnovation({
+      imageUrl,
       title,
       industry,
       stage,
@@ -29,6 +31,7 @@ export const insertInnovationDetails = async (innovation) => {
       intellectualPropertyInformation,
       teamMembers,
       contactInformation,
+      estimatedPrice,
     });
     return await InnovationCreate.save();
   } catch (error) {
@@ -36,18 +39,18 @@ export const insertInnovationDetails = async (innovation) => {
   }
 };
 
-export const readInnovationDetails = async (id) => {
-  const innovation = await createInnovation.findById(id);
+export const readInnovationDetails = async (id, projections) => {
+  const innovation = await createInnovation.findById(id, projections);
   if (!innovation) {
     throw new Error('No document found for the given ID');
   }
   return innovation;
 };
-export const readAllInnovationDetails = async (id) => {
-  const projection = { title: 1, industry: 1, stage: 1, description: 1 };
+
+export const readAllInnovationDetails = async (projection) => {
   const innovation = await createInnovation.find({}, projection);
   if (!innovation) {
-    throw new Error('No document found for the given ID');
+    throw new Error('No documents found');
   }
   return innovation;
 };
