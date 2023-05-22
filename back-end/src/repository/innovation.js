@@ -2,6 +2,7 @@ import createInnovation from '../models/innovation.js';
 
 export const insertInnovationDetails = async (innovation) => {
   const {
+    imageUrl,
     title,
     industry,
     stage,
@@ -15,6 +16,7 @@ export const insertInnovationDetails = async (innovation) => {
   } = innovation;
   try {
     const InnovationCreate = new createInnovation({
+      imageUrl,
       title,
       industry,
       stage,
@@ -44,10 +46,11 @@ export const readInnovationDetails = async (id, projections) => {
   }
   return innovation;
 };
+
 export const readAllInnovationDetails = async (projection) => {
   const innovation = await createInnovation.find({}, projection);
   if (!innovation) {
-    throw new Error('No document found for the given ID');
+    throw new Error('No documents found');
   }
   return innovation;
 };

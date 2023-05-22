@@ -31,7 +31,7 @@ export const getAllInnovation = async (req, res) => {
     const retrievedInnovation = await retrieveAllInnovationsFromDB();
     res.send(retrievedInnovation);
   } catch (error) {
-    res.status(404).send({ error: 'No document found for the given ID' });
+    res.status(404).send({ error: 'No documents found' });
   }
 };
 

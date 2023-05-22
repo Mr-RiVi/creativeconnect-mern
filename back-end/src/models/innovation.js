@@ -2,6 +2,9 @@ import mongoose from 'mongoose';
 
 const innovationSchema = mongoose.Schema(
   {
+    imageUrl: {
+      type: String,
+    },
     title: {
       type: String,
       required: true,

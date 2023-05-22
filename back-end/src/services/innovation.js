@@ -11,6 +11,7 @@ import {
 
 export const insertInnovationToDB = async (innovation) => {
   const {
+    imageUrl,
     title,
     industry,
     stage,
@@ -24,6 +25,7 @@ export const insertInnovationToDB = async (innovation) => {
   } = innovation;
 
   const innovationDetails = {
+    imageUrl,
     title,
     industry,
     stage,
@@ -48,7 +50,13 @@ export const retrieveInnovationFromDB = async (id) => {
   return await readInnovationDetails(id);
 };
 export const retrieveAllInnovationsFromDB = async () => {
-  const projection = { title: 1, industry: 1, stage: 1, description: 1 };
+  const projection = {
+    imageUrl: 1,
+    title: 1,
+    industry: 1,
+    stage: 1,
+    description: 1,
+  };
   return await readAllInnovationDetails(projection);
 };
 
