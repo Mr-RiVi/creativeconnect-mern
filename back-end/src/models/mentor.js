@@ -56,6 +56,9 @@ const mentorSchema = mongoose.Schema(
     mentImg: {
       type: String,
     },
+    mentState: {
+      type: String,
+    },
 
   },
   {

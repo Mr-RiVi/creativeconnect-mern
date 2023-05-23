@@ -42,7 +42,7 @@ const EntrepreneurIdeaDetail = () => {
   return (
     <div className="w-[1382px] justify-center h-auto  bg-gray-200 ">
       <br></br>
-      <h1 className="text-3xl font-bold text-center mr-7">Profile Detail & Card Details Page</h1>   
+      <h1 className="text-3xl font-bold text-center mr-7">Company Detail & Innovation Idea Details</h1>   
 
       {/* Card view for Company & Product & Product Ideas */}
       <div className="flex flex-wrap justify-center gap-8 mt-6 mb-10 ">
@@ -132,14 +132,13 @@ const EntrepreneurIdeaDetail = () => {
                     <div class="flex space-x-2 text-sm font-medium bg-sky-100 mb-4 w-80 ">
                       <p class="text-xs leading-6 text-slate-500">
                       {product.ideaDescription}
-                      ffdfgdgggggggggggggggggggg
-                      gdddddddddddddddddd 
-                      dddgddddddd ddddddddddd
-                      ffdfgdgggggggggggggggggggg
-                      gdddddddddddddddddd 
-                      dddgddddddd ddddddddddd
+                      
                       </p>
                     </div>
+
+                    <div class="flex space-x-2 text-sm font-medium bg-sky-100 mb-4 w-80 ">
+                      <p>Budget : RS.{product.ideaBudget}.00</p>
+                      </div>
 
                     <div class="flex space-x-2 mb- text-sm font-medium">
                       <div class="flex space-x-4">

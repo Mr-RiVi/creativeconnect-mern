@@ -19,7 +19,7 @@ export const createMentorAccount = async (details) => {
       fbLink: details.fbLink,
       linkedinLink: details.linkedinLink,
       mentImg: details.mentImg,
-
+      mentState: details.mentState,
     })
 
     await mentor.save()

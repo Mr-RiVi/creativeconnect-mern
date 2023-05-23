@@ -22,7 +22,7 @@ const SideNavbar = () => {
       submenu: true,
       spacing: true,
       submenuItems: [
-        { title: 'Add New Mentor', src: 'addMentorDetails' },
+        { title: 'Add New Mentor', src: 'profiledetailcreate' },
         { title: 'View All Mentors', src: 'viewAllEmployees' },
       ],
     },

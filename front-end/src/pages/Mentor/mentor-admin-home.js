@@ -155,7 +155,13 @@ const MentorAdminHome = () => {
                         </li>
                       </Link>
 
-                      <li>Connect</li>
+                      <Link to={`../question/${mentor._id}`}>
+                        <li
+                          onClick={() => {
+                            console.log(mentor._id);
+                          }}
+                        >Connect</li>
+                      </Link>
                     </ul>
                   </div>
                 </div>

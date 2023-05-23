@@ -6,7 +6,7 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
 
 import TextField from "@mui/material/TextField";
-import "../../assets/styles/buttonHover.css";
+import Background from "../../assets/images/Entrepreneur/background.jpg";
 
 export default function EntrepreneurIdeaUpdate() {
   const { entId, prodId } = useParams();
@@ -56,7 +56,7 @@ export default function EntrepreneurIdeaUpdate() {
       });
       if (response.ok) {
         alert("Product updated successfully");
-        // window.location.replace(`../ideadetail/${id}`)
+        window.location.replace(`/entrepreneurHome/ideadetail/${entId}`)
       } else {
         throw new Error('Failed to update Product');
       }
@@ -77,7 +77,7 @@ export default function EntrepreneurIdeaUpdate() {
         if (response.ok) {
           setDeleteSuccess(true);
           alert("Product Deleted successfully");
-          // window.location.href = `../idea`
+          window.location.replace(`/entrepreneurHome/ideadetail/${entId}`)
         } else {
           throw new Error("Failed to delete Product");
         }
@@ -88,35 +88,47 @@ export default function EntrepreneurIdeaUpdate() {
   }
 
   return (
-    <div className="w-[1382px] justify-center h-auto bg-sky-200 ">
-      <div class="p-16 -mt-10 ">
-        {ProductIdea && (
-          <div class="p-8 bg-white shadow mt-4">
-            <div class=" flex flex-col justify-center ">
+    <div className="w-[1200px] justify-center h-auto ">
+      <div className="review">
+        <img src={Background} alt="" className="fixed h-auto w-auto" />
+      </div>
+      
+        <div className=" ml-44 p-10 -mt-24">
+          {ProductIdea && (
+            <div class="p-8 bg-gray-400 shadow mt-28 opacity-90 rounded-3xl " key={ProductIdea._id}>
+              <h5 className="text-3xl font-serif mb-3 ml-56">Update Innovation Idea</h5>
+              <div class="grid grid-cols-1 md:grid-cols-3">
 
-              <div key={ProductIdea._id}>
-                <div class="flex flex-col p-[20px] w-[1100px] justify-center m-auto">
+                {/* profile pic */}
+                <div class="relative">
+                  <div class="w-96 h-60 bg-gray-500 mx-auto rounded-xl shadow-2xl absolute mt-9 -ml-[470px] flex items-center justify-center text-slate-700 left-[500px] ">
+                    <img 
+                      className='upload-image w-60'
+                      src={updatedProductIdea.ideaImg || ProductIdea.ideaImg}
+                      alt=""
+                    />
+
+                  </div>
+                  <div className="mr-6">
+                    <input
+                      className="mt-[300px] ml-20 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-white focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      id="default_size"
+                      type="file"
+                      name="image"
+                      required
+                      onChange={handleImageChange}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="justify-center">
+                {/* <div key={ProductIdea._id}> */}
+                <div class="flex flex-col p-[20px] w-96 -mt-[350px] mr-10 justify-center m-auto font-serif">
                   {/* Mentor private details */}
-                  <form class="flex flex-col gap-6 ">
-                    <div class="upload-image ml-4 mt-4 bg-slate-300">
-                      <img 
-                        className='upload-image w-60'
-                        src={updatedProductIdea.ideaImg || ProductIdea.ideaImg}
-                        alt=""
-                        />
-                    </div>
-                    <div className='mb-2'>
-                      <input
-                        className="bg-gray-50 border border-gray-300 mt-2 "
-                        id="default_size"
-                        type="file"
-                        name="image"
-                        onChange={handleImageChange}
-                        // required
-                      />
-                    </div>
-
-                    {/* Name */}
+                  <form class="flex flex-col mt-[20px] gap-6 ">
+                    
+                    {/* Idea Name */}
                     <TextField //single line
                       id="outlined-read-only-input"
                       label="Idea Name"
@@ -124,48 +136,47 @@ export default function EntrepreneurIdeaUpdate() {
                       onChange={(e) => setUpdatedProductIdea({ ...updatedProductIdea, ideaName: e.target.value })}
                     />
 
-                    {/* Description */}
+                    {/* Idea Industry */}
                     <TextField //only 3 lines showing after that extended inside
                       id="outlined-multiline-static"
-                      label="Idea Description"
-                      multiline
-                      rows={3}
-                      defaultValue={ProductIdea.ideaDescription}
-                      onChange={(e) => setUpdatedProductIdea({ ...updatedProductIdea, ideaDescription: e.target.value })}
-                    />
-
-                    {/* Work History */}
-                    <TextField
-                      id="outlined-multiline-static"
-                      label="Industry"
-                      multiline
-                      rows={2}
+                      label="Idea Industry"
                       defaultValue={ProductIdea.ideaIndustry}
                       onChange={(e) => setUpdatedProductIdea({ ...updatedProductIdea, ideaIndustry: e.target.value })}
                     />
 
-                    {/* Education */}
+                    {/* Idea Budget*/}
                     <TextField
-                      id="outlined-read-only-input"
-                      label="Budget"
-                      multiline
-                      rows={2}
+                      id="outlined-multiline-static"
+                      label="Idea Budget"
+                      type="number"
                       defaultValue={ProductIdea.ideaBudget}
                       onChange={(e) => setUpdatedProductIdea({ ...updatedProductIdea, ideaBudget: e.target.value })}
                     />
 
+                    {/* Idea Description */}
+                    <TextField
+                      id="outlined-read-only-input"
+                      label="Description"
+                      multiline
+                      rows={2}
+                      defaultValue={ProductIdea.ideaDescription}
+                      onChange={(e) => setUpdatedProductIdea({ ...updatedProductIdea, ideaDescription: e.target.value })}
+                    />
                   </form>
                 </div>
 
-                <div className="flex justify-end mt-4">
+                <div className="flex justify-end mt-3">
                   <button
-                    className="button-1 w-36 mr-8 -mt-4 rounded-2xl text-gray-600"
+                    className=" w-28 h-10 mr-5 -mt-4 rounded-3xl bg-cyan-700 text-black"
+                    type="submit"
                     onClick={handleUpdateProductIdea}
                   >
                     Save
                   </button>
+
                   <button
-                    className="button-1 w-36 mr-8 -mt-4 rounded-2xl text-gray-600"
+                    className="w-28 h-10 mr-[60px] -mt-4 rounded-3xl bg-cyan-700 text-black opacity-95"
+                    type="submit"
                     onClick={handleDeleteProductIdea}
                   >
                     Delete
@@ -174,9 +185,9 @@ export default function EntrepreneurIdeaUpdate() {
                 </div>
               </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      
     </div>
   );
 }

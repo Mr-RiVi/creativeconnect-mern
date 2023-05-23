@@ -7,4 +7,5 @@
     }
   },
   "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "liveServer.settings.port": 5501,
   }

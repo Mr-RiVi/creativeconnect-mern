@@ -109,8 +109,8 @@ const EntrepreneurAdminHome = () => {
 
             <div className="max-w-xl bg-black bg-opacity-30 shadow-md py-6 px-8 rounded-lg mt-6 mb-8">
               <p className="text-2xl font-semibold ">
-                Provide your people with the guidance, support, and advocacy they
-                need to excel in their roles
+              “My biggest motivation? Just to keep challenging myself. — every day I’m learning something new.”
+-Richard Branson, founder Virgin Group
               </p>
             </div>
           </div>
@@ -229,7 +229,7 @@ const EntrepreneurAdminHome = () => {
       <div className="absolute,  ml-80">
         <div className="flex flex-row">
           <h1 className="text-5xl  text-black font-serif mt-5 mb-0 ml-52 drop-shadow-lg shadow-black">
-            OUR Entrepreneurs
+            Innovation Ideas
           </h1>
 
           {/* search bar */}
@@ -283,16 +283,14 @@ const EntrepreneurAdminHome = () => {
                 </div>
               </div>
 
-              <div class="flex space-x-2 text-sm font-medium bg-sky-100 mb-4 w-80 pb-8 ">
+              <div class="flex space-x-2 text-sm font-medium bg-sky-100 mb-4 w-80 pb-2 ">
                 <p class="text-xs leading-6 text-slate-500">
                 {product.ideaDescription}
-                ffdfgdgggggggggggggggggggg
-                      gdddddddddddddddddd 
-                      dddgddddddd ddddddddddd
-                      ffdfgdgggggggggggggggggggg
-                      gdddddddddddddddddd 
-                      dddgddddddd ddddddddddd
                 </p>
+              </div >
+              
+              <div class="flex space-x-2 text-sm font-medium bg-sky-100 mb-4 w-80 ">
+              <p>Budget : RS.{product.ideaBudget}.00</p>
               </div>
 
               <div class="flex space-x-2 mb- text-sm font-medium">
