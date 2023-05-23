@@ -199,7 +199,7 @@ Provide a descriptive name for the branch that reflects the purpose of your cont
 
 ## License
 
-[License information]
+[MIT License](LICENSE)
 
 ## Support and Contact
 
