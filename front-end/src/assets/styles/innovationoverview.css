@@ -1,0 +1,141 @@
+.main-section {
+  max-width: auto;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0.9rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.main-section li {
+  list-style: none;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.innovationTitle {
+  text-transform: capitalize;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+  white-space: nowrap;
+  display: inline-block;
+  width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.value {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.headings {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.market-potential-details {
+  margin-left: 50px;
+}
+.market-potential-details li {
+  padding-top: 20px;
+}
+
+.competitivePricingAnalysis-details {
+  margin-left: 50px;
+}
+.competitivePricingAnalysis-details li {
+  padding-top: 20px;
+}
+
+.fundingNeeds-details {
+  margin-left: 50px;
+}
+.fundingNeeds-details li {
+  padding-top: 20px;
+}
+
+.IntellectualProperty-details {
+  margin-left: 50px;
+}
+.IntellectualProperty-details li {
+  padding-top: 20px;
+}
+
+.contactInformation-details {
+  margin-left: 50px;
+}
+.contactInformation-details li {
+  padding-top: 7px;
+  border-bottom: none;
+}
+
+.contactInformation {
+  width: 50%;
+}
+
+.teamMembers {
+  width: 40%;
+  margin-left: 20px;
+}
+.teamMembers-details {
+  margin-left: 50px;
+}
+.teamMembers-details li {
+  margin-left: 50px;
+  border-bottom: none;
+}
+.first-section {
+  display: flex;
+}
+.main-image-area {
+  width: 50%;
+}
+.main-image {
+  width: 350px;
+  height: 350px;
+}
+.title-area {
+  width: 50%;
+}
+
+.last-section {
+  display: flex;
+}
+
+.label-type2 {
+  display: inline-block;
+  width: 300px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+
+.value-type2 {
+  display: inline-block;
+  font-size: 1em;
+  margin-bottom: 10px;
+  margin-left: 250px;
+}
+
+.label-type3 {
+  display: inline-block;
+  width: 250px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+
+.value-type3 {
+  display: inline-block;
+  font-size: 1em;
+  margin-bottom: 10px;
+  width: auto;
+}

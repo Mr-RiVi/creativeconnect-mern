@@ -1,0 +1,108 @@
+/* Set font family and font size */
+/* body {
+    font-family: sans-serif;
+    font-size: 16px;
+  } */
+
+/* Style the container */
+.cont123ainer {
+  background-color: rgb(299, 231, 235);
+  max-width: 960px;
+  margin: 0 auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 800px;
+}
+
+/* Style the table */
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Style the table header */
+.thead {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style the table header cells */
+.th {
+  padding: 1rem;
+  text-align: left;
+}
+
+/* Style the table body */
+.tbody tr {
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Style the table body rows */
+.td {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style the hover effect */
+.tbody tr:hover {
+  background-color: #f1f1f1;
+  background-color: rgb(299, 231, 235);
+}
+
+/* Style the buttons */
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Style the primary button */
+.button.primary {
+  color: #fff;
+  background-color: #000;
+  border: 2px solid #000;
+}
+
+/* Style the secondary button */
+.button.secondary {
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+/* Style the link */
+.a {
+  color: #000;
+  text-decoration: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Style the link on hover */
+a:hover {
+  opacity: 0.5;
+}
+
+.h1 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.csaard {
+  padding-left: 200px;
+  z-index: 1;
+  background-color: #e5e7eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* background-color: #abd2d3;	
+    border-radius: 5px;	
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);	
+    margin: 0 auto;	
+    max-width: 500px;	
+    padding: 20px;	 */
+}
