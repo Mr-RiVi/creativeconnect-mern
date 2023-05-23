@@ -10,7 +10,7 @@ import {
   timeToPenetrateMarketAndAchieveProfitabilityOptions,
 } from "../../utils/innovationRelatedData.js";
 
-import { storage } from "../../config/firebaseConfig.js";
+import { storage_inventor } from "../../config/firebaseConfig.js";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 import DOMPurify from "dompurify";
@@ -202,7 +202,7 @@ const InnovationOverview = () => {
   const handleImageUpload = async (event) => {
     event.preventDefault();
     const file = event.target.files[0];
-    const storageRef = ref(storage, `images/${file.name}`);
+    const storageRef = ref(storage_inventor, `images/${file.name}`);
     try {
       const snapshot = await uploadBytes(storageRef, file);
       const imageUrl = await getDownloadURL(snapshot.ref);

@@ -71,7 +71,7 @@ const InnovationVault = () => {
     }
   }, [searchTerm]);
   return (
-    <div class="container">
+    <div class="container-inventor">
       <Header />
       <h1>Innovations</h1>
       <section className="search-bar">
@@ -87,7 +87,7 @@ const InnovationVault = () => {
       </section>
       <section className="vault-section">
         {innovations.map((innovation) => (
-          <div className="card">
+          <div className="card-vault">
             <div className="image">
               <img
                 src={innovation.imageUrl}
